@@ -134,7 +134,7 @@ const ParticleBackground = () => {
           },
           move: {
             enable: true,
-            speed: 6, 
+            speed: 5, 
             direction: "none",
             outModes: {
               default: "bounce",
@@ -142,10 +142,10 @@ const ParticleBackground = () => {
           },
           links: {
             enable: true,
-            distance: 120,
+            distance: 100,
             color: "#555555",
-            opacity: 0.6, 
-            width: 0.7, 
+            opacity: 0.5, 
+            width: 0.5, 
           },
         },
         detectRetina: true,
