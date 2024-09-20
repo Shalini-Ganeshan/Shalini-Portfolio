@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React  from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme } from './Themes';
 import { Design, Develope } from './AllSvgs';
