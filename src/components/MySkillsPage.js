@@ -117,7 +117,7 @@ const ParticleBackground = () => {
             value: 100,
             density: {
               enable: true,
-              area: 700,
+              area: 800,
             },
           },
           color: {
@@ -127,14 +127,14 @@ const ParticleBackground = () => {
             type: "circle",
           },
           opacity: {
-            value: 0.3,
+            value: 0.4,
           },
           size: {
-            value: { min: 0.4, max: 3 },
+            value: { min: 0.6, max: 3 },
           },
           move: {
             enable: true,
-            speed: 3, 
+            speed: 4, 
             direction: "none",
             outModes: {
               default: "bounce",
@@ -142,7 +142,7 @@ const ParticleBackground = () => {
           },
           links: {
             enable: true,
-            distance: 80,
+            distance: 100,
             color: "#555555",
             opacity: 0.4, 
             width: 0.5, 
