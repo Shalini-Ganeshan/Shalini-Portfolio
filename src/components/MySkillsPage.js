@@ -180,7 +180,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 2 }}
+            transition={{ duration: 0.2, delay: 2 }}
           >
             It excites me as it blends creativity with technology to create seamless, dynamic user experiences, allowing to bring new ideas to life.
           </Description>
@@ -188,7 +188,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 2.5 }}
+            transition={{ duration: 0.2, delay: 2.5 }}
           >
             <strong>Skills</strong>
             <p>Html, Css, Js, React, Next, Redux, Sass, Bootstrap, Tailwind, Firebase.</p>
@@ -197,7 +197,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 3 }}
+            transition={{ duration: 0.2, delay: 3 }}
           >
             <strong>Tools</strong>
             <p>VScode, Github, Figma.</p>
@@ -207,7 +207,7 @@ const MySkillsPage = () => {
         <Main
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 3, ease: "easeInOut", delay: 1.5 }}
+          transition={{ duration: 2, ease: "easeInOut", delay: 1.5 }}
         >
           <Title>
             <Develope width={40} height={40} /> Backend Development
@@ -216,7 +216,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 4 }}
+            transition={{ duration: 0.2, delay: 4 }}
           >
             I love the idea of working behind the scenes to make everything tick, it lets me dive into managing databases and building systems from the ground up.
           </Description>
@@ -224,7 +224,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 4.5 }}
+            transition={{ duration: 0.2, delay: 4.5 }}
           >
             <strong>Skills</strong>
             <p>SpringBoot, MongoDB, Node.js, MySQL, GraphQL.</p>
@@ -233,7 +233,7 @@ const MySkillsPage = () => {
             variants={descriptionVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.3, delay: 5 }}
+            transition={{ duration: 0.2, delay: 5 }}
           >
             <strong>Tools</strong>
             <p>IntelliJ, VScode.</p>
