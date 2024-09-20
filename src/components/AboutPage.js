@@ -36,16 +36,20 @@ const Myself = styled.div`
     height: auto;
   }
 
+   // Media queries for responsiveness
   @media (max-width: 768px) {
-    width: 60vw; // Larger on medium screens
-    top: 10%;
-    right: 10%;
+    width: 70vw; // Wider on medium screens
+    left: 10vw; // Centering adjustments
+    top: 20%; // Adjusting top position
+    border: 1.5px solid ${(props) => props.theme.text}; // Thinner border for medium screens
   }
 
   @media (max-width: 480px) {
-    width: 80vw; // Full width on small screens
-    top: 15%;
-    right: 10%;
+    width: 50vw; // Full width on small screens
+    left: 5vw; // Centering adjustments
+    top: 25%; // Adjusting top position
+    font-size: calc(0.5rem + 1vw); // Increased font size for readability
+    border: 1px solid ${(props) => props.theme.text}; // Thinner border for small screens
   }
 `;
 
