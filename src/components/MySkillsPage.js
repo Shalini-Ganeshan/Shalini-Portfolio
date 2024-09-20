@@ -114,7 +114,7 @@ const ParticleBackground = () => {
         },
         particles: {
           number: {
-            value: 100,
+            value: 85,
             density: {
               enable: true,
               area: 800,
@@ -142,7 +142,7 @@ const ParticleBackground = () => {
           },
           links: {
             enable: true,
-            distance: 100,
+            distance: 135,
             color: "#555555",
             opacity: 0.4, 
             width: 0.5, 
