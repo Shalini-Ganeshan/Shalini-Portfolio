@@ -16,6 +16,10 @@ const Box = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+   @media (max-width: 480px) {
+    width: 50vw; // Full width on small screen
+   height:80vh;
+  }
 `;
 
 const float = keyframes`
@@ -41,15 +45,13 @@ const Myself = styled.div`
     width: 70vw; // Wider on medium screens
     left: 10vw; // Centering adjustments
     top: 20%; // Adjusting top position
-    border: 1.5px solid ${(props) => props.theme.text}; // Thinner border for medium screens
   }
 
   @media (max-width: 480px) {
-    width: 50vw; // Full width on small screens
-    left: 5vw; // Centering adjustments
-    top: 25%; // Adjusting top position
+    width: 90vw; // Full width on small screens
+    left: 0vw; // Centering adjustments
+    top: 5%; // Adjusting top position
     font-size: calc(0.5rem + 1vw); // Increased font size for readability
-    border: 1px solid ${(props) => props.theme.text}; // Thinner border for small screens
   }
 `;
 
