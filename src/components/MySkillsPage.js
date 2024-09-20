@@ -121,7 +121,7 @@ const ParticleBackground = () => {
             },
           },
           color: {
-            value: "#555555", // Particle color
+            value: "#555555", 
           },
           shape: {
             type: "circle",
@@ -130,7 +130,7 @@ const ParticleBackground = () => {
             value: 0.4,
           },
           size: {
-            value: { min: 0.3, max: 2 },
+            value: { min: 0.4, max: 3 },
           },
           move: {
             enable: true,
