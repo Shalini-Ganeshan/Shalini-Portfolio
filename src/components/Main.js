@@ -25,6 +25,10 @@ const MainContainer = styled.div`
     font-family: 'Karla', sans-serif;
     font-weight: 500;
   }
+`;
+
+const Container = styled.div`
+  padding: 2rem;
 
   @media (max-width: ${breakpoints.large}) {
     padding: 1rem;
@@ -37,10 +41,6 @@ const MainContainer = styled.div`
   @media (max-width: ${breakpoints.small}) {
     padding: 0.25rem;
   }
-`;
-
-const Container = styled.div`
-  padding: 2rem;
 `;
 
 const Contact = styled.a`
@@ -176,8 +176,8 @@ const rotate = keyframes`
 
 const Center = styled.button`
   position: absolute;
-  top: ${props => (props.click ? '85%' : '50%')};
-  left: ${props => (props.click ? '92%' : '50%')};
+  top: ${props => (props.click ? '80%' : '50%')}; /* Adjust for alignment */
+  left: ${props => (props.click ? '90%' : '50%')}; /* Adjust for alignment */
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -200,13 +200,13 @@ const Center = styled.button`
   }
 
   @media (max-width: ${breakpoints.medium}) {
-    top: ${props => (props.click ? '80%' : '50%')};
-    left: ${props => (props.click ? '90%' : '50%')};
+    top: ${props => (props.click ? '75%' : '50%')}; /* Adjust for smaller screens */
+    left: ${props => (props.click ? '85%' : '50%')}; /* Adjust for smaller screens */
   }
 
   @media (max-width: ${breakpoints.small}) {
-    top: ${props => (props.click ? '75%' : '50%')};
-    left: ${props => (props.click ? '85%' : '50%')};
+    top: ${props => (props.click ? '70%' : '50%')}; /* Further adjustments for small screens */
+    left: ${props => (props.click ? '80%' : '50%')}; /* Further adjustments for small screens */
   }
 `;
 
