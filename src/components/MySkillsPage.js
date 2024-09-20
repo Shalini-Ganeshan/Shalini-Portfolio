@@ -127,7 +127,7 @@ const ParticleBackground = () => {
             type: "circle",
           },
           opacity: {
-            value: 0.5,
+            value: 0.6,
           },
           size: {
             value: { min: 0.7, max: 3 },
@@ -144,7 +144,7 @@ const ParticleBackground = () => {
             enable: true,
             distance: 145,
             color: "#555555",
-            opacity: 0.6, 
+            opacity: 0.7, 
             width: 0.5, 
           },
         },
