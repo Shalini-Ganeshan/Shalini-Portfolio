@@ -16,10 +16,7 @@ const Box = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
-   @media (max-width: 480px) {
-    width: 50vw; // Full width on small screen
-   height:80vh;
-  }
+  
 `;
 
 const float = keyframes`
@@ -82,9 +79,9 @@ const Main = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 90vw; // Full width on small screens
+    width: 50vw; // Full width on small screens
     left: 5vw; // Centering adjustments
-    top: 25%; // Adjusting top position
+    top: 5%; // Adjusting top position
     font-size: calc(0.5rem + 1vw); // Increased font size for readability
   }
 `;
