@@ -127,24 +127,24 @@ const ParticleBackground = () => {
             type: "circle",
           },
           opacity: {
-            value: 0.6,
+            value: 0.4,
           },
           size: {
-            value: { min: 0.3, max: 4 },
+            value: { min: 0.3, max: 2 },
           },
           move: {
             enable: true,
-            speed: 6, // Adjusted speed
+            speed: 6, 
             direction: "none",
             outModes: {
               default: "bounce",
             },
           },
           links: {
-            enable: true, // Enable links
-            distance: 120, // Distance within which connections are drawn
-            color: "#555555", // Color of the links
-            opacity: 0.6, // Opacity of the links
+            enable: true,
+            distance: 120,
+            color: "#555555",
+            opacity: 0.6, 
             width: 0.7, 
           },
         },
