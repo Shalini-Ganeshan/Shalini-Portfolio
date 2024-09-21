@@ -80,6 +80,11 @@ const Item = {
 const FeatComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
+    <motion.div    initial={{ opacity: 0 }} 
+    animate={{opacity:1}}
+    transition={{ duration: 0.1, ease: "easeIn"}} 
+ 
+    > 
     <Container variants={Item}>
       <Box target="_blank" href={`${link}`}>
         <Image img={imgSrc} />
@@ -92,6 +97,7 @@ const FeatComponent = (props) => {
         <Date>{date}</Date>
       </Box>
     </Container>
+    </motion.div>
   );
 };
 
