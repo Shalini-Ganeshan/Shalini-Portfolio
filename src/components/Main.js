@@ -8,13 +8,7 @@ import SocialIcons from '../subComponents/SocialIcons';
 import { YinYang } from './AllSvgs';
 import Intro from './Intro';
 
-const breakpoints = {
-  small: '576px',
-  medium: '768px',
-  large: '992px',
-};
-
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)` // Make this a motion component
   background: ${props => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -29,18 +23,6 @@ const MainContainer = styled.div`
 
 const Container = styled.div`
   padding: 2rem;
-
-  @media (max-width: ${breakpoints.large}) {
-    padding: 1rem;
-  }
-
-  @media (max-width: ${breakpoints.medium}) {
-    padding: 0.5rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    padding: 0.25rem;
-  }
 `;
 
 const Contact = styled.a`
@@ -50,16 +32,6 @@ const Contact = styled.a`
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem; 
-    top: 1rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem; 
-    top: 0.5rem;
-  }
 `;
 
 const Resume = styled.a`
@@ -69,16 +41,6 @@ const Resume = styled.a`
   left: calc(16rem + 3vw);
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem;
-    left: calc(12rem + 2vw);
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem;
-    left: calc(8rem + 1vw);
-  }
 `;
 
 const BLOG = styled(NavLink)`
@@ -89,32 +51,16 @@ const BLOG = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem;
-  }
 `;
 
 const WORK = styled(NavLink)`
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   top: 40%;
   left: calc(1rem + 2vw);
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem;
-  }
 `;
 
 const BottomBar = styled.div`
@@ -125,44 +71,18 @@ const BottomBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-
-  @media (max-width: ${breakpoints.medium}) {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 const ABOUT = styled(NavLink)`
-  color: ${props => (props.click ? props.theme.body : props.theme.text)};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem;
-  }
 `;
 
 const SKILLS = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1;
-
-  @media (max-width: ${breakpoints.medium}) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    font-size: 0.8rem;
-  }
 `;
 
 const rotate = keyframes`
@@ -171,19 +91,17 @@ const rotate = keyframes`
   }
   to {
     transform: rotate(360deg);
-  }
-`;
+}`;
 
 const Center = styled.button`
   position: absolute;
-  top: ${props => (props.click ? '80%' : '50%')}; /* Adjust for alignment */
-  left: ${props => (props.click ? '90%' : '50%')}; /* Adjust for alignment */
+  top: ${props => props.click ? '85%' : '50%'};
+  left: ${props => props.click ? '92%' : '50%'};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
   background-color: transparent;
   cursor: pointer;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,18 +113,8 @@ const Center = styled.button`
   }
 
   & > :last-child {
-    display: ${props => (props.click ? 'none' : 'inline-block')};
+    display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
-  }
-
-  @media (max-width: ${breakpoints.medium}) {
-    top: ${props => (props.click ? '75%' : '50%')}; /* Adjust for smaller screens */
-    left: ${props => (props.click ? '85%' : '50%')}; /* Adjust for smaller screens */
-  }
-
-  @media (max-width: ${breakpoints.small}) {
-    top: ${props => (props.click ? '70%' : '50%')}; /* Further adjustments for small screens */
-    left: ${props => (props.click ? '80%' : '50%')}; /* Further adjustments for small screens */
   }
 `;
 
@@ -216,58 +124,55 @@ const DarkDiv = styled.div`
   background-color: #000;
   bottom: 0;
   right: 50%;
-  width: ${props => (props.click ? '50%' : '0%')};
-  height: ${props => (props.click ? '100%' : '0%')};
+  width: ${props => props.click ? '50%' : '0%'};
+  height: ${props => props.click ? '100%' : '0%'};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
-
 const Main = () => {
   const [click, setClick] = useState(false);
-  const [animating, setAnimating] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+  const [exitDirection, setExitDirection] = useState(''); // State for exit direction
 
-  const handleClick = () => setClick(!click);
+  const handleExit = (direction) => {
+    setIsExiting(true);
+    setExitDirection(direction);
 
-  const handleTap = (e) => {
-    e.preventDefault(); // Prevent default navigation
-    setAnimating(true);
-    
-    setTimeout(() => {
-      // Navigate to the skills page after the animation
-      window.location.href = '/skills'; // Use window.location.href for navigation
-    }, 1000); // Match with the animation duration
+  // Match the timeout with the exit animation duration
   };
 
+  const handleUp = () => handleExit('up');
+  const handleRight = () => handleExit('right');
+  const handleLeft = () => handleExit('left');
+
   return (
-    <MainContainer>
+    <MainContainer
+      initial={{ opacity: [0,1] , transition: { duration: 3 }}}
+      animate={{ opacity: isExiting ? 0 : 1 }}
+      exit={{
+        x: exitDirection === 'right' ? [0, 2000] :
+           exitDirection === 'left' ? [0, -2000] :
+           exitDirection === 'up' ? [0, 0] : [0, 0],
+           y: exitDirection === 'up' ? [0, -2000] : 0,
+        opacity: 1,
+       transition:{duration:0.5}
+      }}
+    >
       <DarkDiv click={click} />
-      <Container
-        initial={{ y: animating ? 100 : 0, opacity: animating ? 0 : 1 }}
-        animate={{
-          y: animating ? -100 : 0,
-          opacity: animating ? 0 : 1,
-        }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
+      <Container>
         <PowerButton />
         <LogoComponent theme={click ? 'dark' : 'light'} />
         <SocialIcons theme={click ? 'dark' : 'light'} />
 
-        <Center click={click}>
-          <YinYang onClick={handleClick} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
+        <Center click={click} onClick={() => handleExit('')}>
+          <YinYang width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
           <span>click here</span>
         </Center>
 
         <Contact target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -276,46 +181,28 @@ const Main = () => {
         </Contact>
         <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             Resume
           </motion.h2>
         </Resume>
-        <BLOG to="/feats">
+        <BLOG to="/feats" onClick={handleLeft}>
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/work" click={+click}>
+        <WORK to="/work" onClick={handleRight}>
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -323,32 +210,20 @@ const Main = () => {
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" click={+click}>
+          <ABOUT to="/about" onClick={handleUp}>
             <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1 },
-              }}
+              initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+              animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               About
             </motion.h2>
           </ABOUT>
-          <SKILLS to="/skills" onClick={handleTap}>
+          <SKILLS to="/skills" onClick={handleUp}>
             <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: 'spring', duration: 1.5, delay: 1 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: 'spring', duration: 1.5, delay: 1 },
-              }}
+              initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
+              animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
