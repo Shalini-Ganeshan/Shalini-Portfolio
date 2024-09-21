@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled, { keyframes, ThemeProvider } from 'styled-components';
 import { DarkTheme } from './Themes';
 import { motion } from 'framer-motion';
@@ -11,12 +11,11 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
 const Box = styled.div`
-  background-color: ${(props) => props.theme.body};
+  background-color: ${props => props.theme.body};
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
-  
 `;
 
 const float = keyframes`
@@ -27,35 +26,20 @@ const float = keyframes`
 
 const Myself = styled.div`
   position: absolute;
-  top: 5%; // Adjusted for better positioning on smaller screens
-  right: 5%; // Adjusted for better positioning on smaller screens
-  width: 40vw; // Slightly smaller on smaller screens
+  top: 2%;
+  right: 0%;
+  width: 45vw; /* Increased width */
   animation: ${float} 4s ease infinite;
-  
   img {
     width: 100%;
     height: auto;
-  }
-
-   // Media queries for responsiveness
-  @media (max-width: 768px) {
-    width: 70vw; // Wider on medium screens
-    left: 10vw; // Centering adjustments
-    top: 20%; // Adjusting top position
-  }
-
-  @media (max-width: 480px) {
-    width: 90vw; // Full width on small screens
-    left: 0vw; // Centering adjustments
-    top: 5%; // Adjusting top position
-    font-size: calc(0.5rem + 1vw); // Increased font size for readability
   }
 `;
 
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
-  padding: 1rem; // Adjusted padding for responsiveness
+  padding: 2rem;
   width: 50vw;
   height: 60vh;
   z-index: 3;
@@ -64,26 +48,13 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   font-size: calc(0.6rem + 0.8vw);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); 
   background: rgba(0, 0, 0, 0.0);
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
-
-  @media (max-width: 768px) {
-    width: 70vw; // Wider on medium screens
-    left: 10vw; // Centering adjustments
-    top: 20%; // Adjusting top position
-  }
-
-  @media (max-width: 480px) {
-    width: 50vw; // Full width on small screens
-    left: 5vw; // Centering adjustments
-    top: 5%; // Adjusting top position
-    font-size: calc(0.5rem + 1vw); // Increased font size for readability
-  }
 `;
 
 const ParticleBackground = () => {
@@ -101,11 +72,11 @@ const ParticleBackground = () => {
           events: {
             onClick: {
               enable: false,
-              mode: 'push',
+              mode: "push",
             },
             onHover: {
               enable: false,
-              mode: 'repulse',
+              mode: "repulse",
             },
             resize: true,
           },
@@ -121,17 +92,17 @@ const ParticleBackground = () => {
         },
         particles: {
           number: {
-            value: 20,
+            value: 15,
             density: {
               enable: true,
               area: 800,
             },
           },
           color: {
-            value: '#FFFFFF',
+            value: "#FFFFFF",
           },
           shape: {
-            type: 'circle',
+            type: "circle",
           },
           opacity: {
             value: 0.5,
@@ -142,9 +113,9 @@ const ParticleBackground = () => {
           move: {
             enable: true,
             speed: 2,
-            direction: 'none',
+            direction: "none",
             outModes: {
-              default: 'bounce',
+              default: "bounce",
             },
           },
         },
@@ -157,26 +128,33 @@ const ParticleBackground = () => {
 const AboutPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
+       <motion.div    initial={{ opacity: 0 }} 
+        animate={{opacity:1}}
+        transition={{ duration: 0.1, ease: "easeIn"}} 
+     
+        > 
       <Box>
         <ParticleBackground />
-        <LogoComponent theme="dark" />
-        <SocialIcons theme="dark" />
+        <LogoComponent theme='dark' />
+        <SocialIcons theme='dark' />
         <PowerButton />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 3, ease: 'easeIn', delay: 1 }}
+          transition={{ duration: 3, ease: "easeIn", delay: 1 }}
         >
           <Myself>
             <motion.div
               initial={{ x: '100%', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 2, ease: 'easeIn', delay: 1 }}
+              transition={{ duration: 2, ease: "easeIn", delay: 1 }}
             >
               <img src={Girl} alt="Girl" />
             </motion.div>
           </Myself>
-          <Main>
+          <Main
+           
+          >
             I’m a full-stack developer with a passion for frontend development. My enthusiasm for self-learning drives me to constantly explore new technologies and solve challenging coding problems, having tackled over 800+ so far.
             <br /> <br />
             I have developed a strong interest in creating personal projects and am also familiar with cloud technologies. This combination allows me to build dynamic, user-friendly applications and deploy them efficiently.
@@ -186,6 +164,7 @@ const AboutPage = () => {
         </motion.div>
         <BigTitle text="ABOUT" top="10%" left="5%" />
       </Box>
+      </motion.div>
     </ThemeProvider>
   );
 };
