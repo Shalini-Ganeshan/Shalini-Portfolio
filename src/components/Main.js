@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -138,7 +138,7 @@ const Main = () => {
     setIsExiting(true);
     setExitDirection(direction);
 
-  // Match the timeout with the exit animation duration
+
   };
 
   const handleUp = () => handleExit('up');
