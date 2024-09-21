@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -8,7 +8,7 @@ import SocialIcons from '../subComponents/SocialIcons';
 import { YinYang } from './AllSvgs';
 import Intro from './Intro';
 
-const MainContainer = styled(motion.div)` // Make this a motion component
+const MainContainer = styled(motion.div)`
   background: ${props => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -129,16 +129,15 @@ const DarkDiv = styled.div`
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
+
 const Main = () => {
-  const [click, setClick] = useState(false);
+  const [click] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
-  const [exitDirection, setExitDirection] = useState(''); // State for exit direction
+  const [exitDirection, setExitDirection] = useState('');
 
   const handleExit = (direction) => {
     setIsExiting(true);
     setExitDirection(direction);
-
-
   };
 
   const handleUp = () => handleExit('up');
@@ -147,15 +146,15 @@ const Main = () => {
 
   return (
     <MainContainer
-      initial={{ opacity: [0,1] , transition: { duration: 3 }}}
+      initial={{ opacity: [0, 1], transition: { duration: 3 } }}
       animate={{ opacity: isExiting ? 0 : 1 }}
       exit={{
         x: exitDirection === 'right' ? [0, 2000] :
            exitDirection === 'left' ? [0, -2000] :
            exitDirection === 'up' ? [0, 0] : [0, 0],
-           y: exitDirection === 'up' ? [0, -2000] : 0,
+        y: exitDirection === 'up' ? [0, -2000] : 0,
         opacity: 1,
-       transition:{duration:0.5}
+        transition: { duration: 0.5 }
       }}
     >
       <DarkDiv click={click} />
