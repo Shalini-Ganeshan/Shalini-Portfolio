@@ -1,26 +1,16 @@
+import { useState } from 'react'; // Import useState for managing flip state
+import ReactCardFlip from 'react-card-flip'; // Import the react-card-flip library
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { Github } from '../components/AllSvgs';
+import '../components/css/Card.css';
 
 const FlipCard = styled(motion.div)`
   position: relative;
   width: 16rem;
   height: 40vh;
-  perspective: 1000px;
   margin-right: 12rem;
-`;
-const FlipCardInner = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1s ease; /* Smooth flipping transition */
-  &:hover {
-    transform: rotateY(180deg); /* Rotate the card when hovering */
-  }
-    
-
 `;
 
 const FlipCardFront = styled.div`
@@ -34,34 +24,27 @@ const FlipCardFront = styled.div`
   border-radius: 0 50px 0 50px;
   display: flex;
   flex-direction: column;
-  transform:rotateY(0deg);
   justify-content: center;
   align-items: center;
-   transition: transform 1s ease;
+  z-index: 2;
   border: 1px solid ${(props) => props.theme.body};
-   
 `;
 
 const FlipCardBack = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  border:solid ${(props) => props.theme.text};
+  border: solid ${(props) => props.theme.text};
   backface-visibility: hidden;
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
   padding: 1.5rem 2rem;
   border-radius: 0 50px 0 50px;
-  transform: rotateY(180deg); /* Start rotated */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   align-items: center;
-   
 `;
-
-
 
 const Title = styled.h2`
   font-size: calc(1em + 0.5vw);
@@ -141,14 +124,28 @@ const Item = {
 const Card = (props) => {
   const { id, name, description, tags, demo, github, image } = props.data;
 
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsFlipped(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsFlipped(false);
+  };
+
   return (
-    <FlipCard key={id} variants={Item}>
-      <FlipCardInner>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
+      <FlipCard key={id} variants={Item}   onMouseEnter={handleMouseEnter} 
+    onMouseLeave={handleMouseLeave}>
         <FlipCardFront>
           <Title>{name}</Title>
           <Description>{description}</Description>
         </FlipCardFront>
+      </FlipCard>
 
+      <FlipCard key={id} variants={Item}  onMouseEnter={handleMouseEnter} 
+    onMouseLeave={handleMouseLeave}>
         <FlipCardBack>
           <WorkImage src={image} alt={name} />
           <Line />
@@ -164,8 +161,8 @@ const Card = (props) => {
             </Git>
           </Footer>
         </FlipCardBack>
-      </FlipCardInner>
-    </FlipCard>
+      </FlipCard>
+    </ReactCardFlip>
   );
 };
 
