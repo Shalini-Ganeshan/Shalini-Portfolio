@@ -60,46 +60,52 @@ const WorkPage = () => {
 
   const cardContainerRef = useRef(null);
 
-  // When the user starts dragging (mouse or touch)
   const handleDragStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.touches ? e.touches[0].clientX : e.clientX); // Get initial X on touch or mouse down
-    setCurrentX(position); // Start from the current translateX position
-  };
+    // Check if the left mouse button is pressed (button === 0 for left button)
+    if (e.type === 'mousedown' && e.button !== 0) return;
+    
+    e.preventDefault(); // Prevent default behavior
+    setIsDragging(true); // Start dragging only if left mouse button or touch start
+    setStartX(e.touches ? e.touches[0].clientX : e.clientX); // Get the start X position
+    setCurrentX(position); // Set the initial position for the drag
+};
 
-  // While dragging (mouse move or touch move)
-  const handleDragMove = (e) => {
-    if (!isDragging) return; // Only move when dragging
-    const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const moveX = x - startX; // Calculate how much we've moved
-    const newPos = currentX + moveX; // New position to be applied
+const handleDragMove = (e) => {
+    if (!isDragging) return; // Do nothing unless we're actively dragging
+    
+    e.preventDefault(); // Prevent default behavior during the drag
 
-    cardContainerRef.current.style.transform = `translateX(${newPos}px)`; // Apply the new transform in real-time
-  };
+    const x = e.touches ? e.touches[0].clientX : e.clientX; // Get the current X position
+    const moveX = x - startX; // Calculate the movement difference
+    const newPos = currentX + moveX; // Calculate the new translate position
 
-  // When dragging stops (mouse or touch release)
-  const handleDragEnd = (e) => {
-    setIsDragging(false);
-    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX; // Get the release X position
-    const moveX = x - startX; // Calculate the total movement
+    cardContainerRef.current.style.transform = `translateX(${newPos}px)`; // Move the cards while dragging
+};
 
-    const finalPosition = currentX + moveX; // Calculate the final position
-    setPosition(finalPosition); // Update the position state
+const handleDragEnd = (e) => {
+    if (!isDragging) return; // Ensure we are dragging before ending
 
-    const containerWidth = cardContainerRef.current.scrollWidth; // Get the total width of the container
-    const windowWidth = window.innerWidth; // Get the width of the viewport
+    setIsDragging(false); // Stop dragging on mouse release
+    e.preventDefault(); // Prevent default behavior
 
-    // Clamp the final position to prevent overscrolling
-    let clampedPosition = finalPosition;
+    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const moveX = x - startX; // Calculate total movement during the drag
+
+    let finalPosition = currentX + moveX; // Calculate the final translate position
+    const containerWidth = cardContainerRef.current.scrollWidth;
+    const windowWidth = window.innerWidth;
+
+    // Clamp final position to prevent overscrolling
     if (finalPosition > 0) {
-      clampedPosition = 0; // Prevent swiping beyond the first card
+        finalPosition = 0; // Prevent going beyond the first card
     } else if (finalPosition < -(containerWidth - windowWidth)) {
-      clampedPosition = -(containerWidth - windowWidth); // Prevent swiping beyond the last card
+        finalPosition = -(containerWidth - windowWidth); // Prevent going beyond the last card
     }
 
-    setPosition(clampedPosition); // Set the final position state
-    cardContainerRef.current.style.transform = `translateX(${clampedPosition}px)`; // Apply the final transform
-  };
+    setPosition(finalPosition); // Set the new position state
+    cardContainerRef.current.style.transform = `translateX(${finalPosition}px)`; // Apply the final transform
+};
+
 
   return (
     <ThemeProvider theme={DarkTheme}>
