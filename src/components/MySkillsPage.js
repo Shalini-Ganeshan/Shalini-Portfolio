@@ -162,7 +162,12 @@ const MySkillsPage = () => {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+       <motion.div    initial={{ opacity: 0 }} 
+                animate={{opacity:1}}
+                transition={{ duration: 0.1, ease: "easeIn"}} 
+             
+                > 
+      <Box >
         <ParticleBackground />
         <LogoComponent theme='light' />
         <SocialIcons theme='light' />
@@ -191,7 +196,7 @@ const MySkillsPage = () => {
             transition={{ duration: 0.2, delay: 2.5 }}
           >
             <strong>Skills</strong>
-            <p>Html, Css, Js, React, Next, Redux, Sass, Bootstrap, Tailwind, Firebase.</p>
+            <p>Html, Css, Js, React, Next, Redux, Framer Motion, Bootstrap, Tailwind, Firebase.</p>
           </Description>
           <Description
             variants={descriptionVariants}
@@ -242,6 +247,7 @@ const MySkillsPage = () => {
 
         <BigTitle text="SKILLS" top="80%" right="30%" />
       </Box>
+      </motion.div>
     </ThemeProvider>
   );
 };
