@@ -49,7 +49,7 @@ export const Work = [
     {
         id: 7,
         name: "Buzz Hub App",
-        description: "A Real-time Chat application enabling seamless instant messaging and collaboration.",
+        description: "A Real-time Messenger application enabling seamless instant messaging and collaboration.",
         tags: ["graphql","apollo-server","web-sockets","nextjs"],
         demo: "https://buzzhub-by-shalini.netlify.app/",
         github: "https://github.com/Shalini-Ganeshan/Buzz-Hub",
