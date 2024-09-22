@@ -45,7 +45,26 @@ export const Work = [
         github: "https://github.com/Shalini-Ganeshan/Microservices-Job-Portal",
         image: jobportal
     },
+  
     {
+        id: 7,
+        name: "Buzz Hub App",
+        description: "A Real-time Chat application enabling seamless instant messaging and collaboration.",
+        tags: ["graphql","apollo-server","web-sockets","nextjs"],
+        demo: "https://buzzhub-by-shalini.netlify.app/",
+        github: "https://github.com/Shalini-Ganeshan/Buzz-Hub",
+        image: buzzHub
+    },
+         {
+        id: 13,
+        name: "DetecTale-Kids App",
+        description:"Multilingual app that uses AI to create age-appropriate stories via Image Recognition. Users can also input via speech and text.",
+        tags: [ "gemini-api","react-speech","tensorflow-coco-ssd","react"],
+        demo: "https://detectale-by-shalini.netlify.app/",
+        github: "https://github.com/Shalini-Ganeshan/DetecTale-App",
+        image: detectale
+    },
+      {
         id: 4,
         name: "Melodify-Music App",
         description: " A Spotify music app that lets users preview 30-second song clips using the Spotify API, Users can pin and like tracks.",
@@ -54,15 +73,7 @@ export const Work = [
         github: "https://github.com/Shalini-Ganeshan/Melodify--music-App",
         image: melodify
     },
-    {
-        id: 7,
-        name: "Buzz Hub App",
-        description: "A Real-time Chat application enabling seamless instant messaging and collaboration.",
-        tags: ["real-time", "web-sockets"],
-        demo: "https://buzzhub-by-shalini.netlify.app/",
-        github: "https://github.com/Shalini-Ganeshan/Buzz-Hub",
-        image: buzzHub
-    },
+ 
     {
         id: 9,
         name: "Google Clone",
@@ -72,15 +83,7 @@ export const Work = [
         github: "https://github.com/Shalini-Ganeshan/Google-clone",
         image: googleClone
     },
-    {
-        id: 13,
-        name: "DetecTale-Kids App",
-        description:"Multilingual app that uses AI to create age-appropriate stories via Image Recognition. Users can also input via speech and text.",
-        tags: [ "gemini-api","react-speech","tensorflow-coco-ssd","react"],
-        demo: "https://detectale-by-shalini.netlify.app/",
-        github: "https://github.com/Shalini-Ganeshan/DetecTale-App",
-        image: detectale
-    },
+  
     {
         id: 6,
         name: "Weatherman",
