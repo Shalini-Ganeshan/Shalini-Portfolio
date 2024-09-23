@@ -105,15 +105,6 @@ export const Work = [
         image: todoApp
     },
     {
-        id: 11,
-        name: "Website using SASS",
-        description: "Built a website using SASS for advanced CSS preprocessing and improved maintainability.",
-        tags: ["sass", "html"],
-        demo: "https://sass-frontend-by-shalini.netlify.app/",
-        github: "https://github.com/Shalini-Ganeshan/SASS-Frontend",
-        image: sassFrontend
-    },
-    {
         id: 12,
         name: "CarVista.com",
         description: "Car selling website with a slick swiper feature for browsing through listings.",
