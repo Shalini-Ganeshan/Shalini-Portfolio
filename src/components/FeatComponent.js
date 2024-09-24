@@ -53,7 +53,7 @@ const Title = styled.h3`
   font-family: "Karla", sans-serif;
   font-weight: 700;
   border-bottom: 1px solid ${(props) => props.theme.text};
-
+text-align:center;
   ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
   }
