@@ -28,7 +28,7 @@ position:relative;
   }
 
   @media (max-width: 768px) {  /* Small screen sizes */
-    width: calc(14rem + 25vw);  /* Increase width even more */
+        width: calc(10rem + 20vw);
   }
 `;
 
