@@ -58,46 +58,57 @@ const container = {
     }
   
   }
-
 const Feats = () => {
 
     const [numbers, setNumbers] = useState(0);
+    const [isMobile, setIsMobile] = useState(false); // State to track screen size
 
     useEffect(() => {
-        let num = (window.innerHeight - 70)/30;
+        let num = (window.innerHeight - 70) / 30;
         setNumbers(parseInt(num));
-    }, [])
 
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768); // Set isMobile to true if screen width is <= 768px
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
         <MainContainer
-        variants={container}
-        initial='hidden'
-        animate='show'
-        exit={{
-            opacity:0, transition:{duration: 0.5}
-        }}
+            variants={container}
+            initial='hidden'
+            animate='show'
+            exit={{
+                opacity: 0, transition: { duration: 0.5 }
+            }}
         >
             <Container>
                 <LogoComponent />
                 <PowerButton />
                 <SocialIcons />
-                <AnchorComponent number={numbers}/>
-<Center>
-<Grid>
-
-{
-    FeatsData.map(blog => {
-        return <FeatComponent key={blog.id} blog={blog} />
-    })
-}
-</Grid>
-
-</Center>
-<BigTitle text="FEATS" top="5rem" left="5rem" />
+                {!isMobile && <AnchorComponent number={numbers} />} {/* Hide AnchorComponent on mobile */}
+                <Center>
+                    <Grid>
+                        {FeatsData.map(blog => {
+                            return <FeatComponent key={blog.id} blog={blog} />
+                        })}
+                    </Grid>
+                </Center>
+                <BigTitle text="FEATS" top="5rem" left="5rem" />
             </Container>
         </MainContainer>
     )
 }
 
 export default Feats;
+
