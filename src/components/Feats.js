@@ -39,6 +39,9 @@ const Grid = styled.div`
 display: grid;
 grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
 grid-gap: calc(1rem + 2vw);
+@media (max-width: 768px) {
+    grid-template-columns: 1fr; 
+  }
 `
 
 // Framer-motion config
