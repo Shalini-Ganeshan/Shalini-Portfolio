@@ -8,7 +8,6 @@ import buzzHub from "../assets/Images/project-images/buzz-hub.png";
 import urlShortener from "../assets/Images/project-images/url-shortener.png";
 import googleClone from "../assets/Images/project-images/google-clone.png";
 import todoApp from "../assets/Images/project-images/todo-app.png";
-import sassFrontend from "../assets/Images/project-images/sass-frontend.png";
 import carVista from "../assets/Images/project-images/carvista.png";
 import detectale from "../assets/Images/project-images/detectale-intro.png";
 import bankManagement from "../assets/Images/project-images/bank-management-system.webp";
