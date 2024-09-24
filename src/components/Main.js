@@ -131,10 +131,10 @@ const DarkDiv = styled.div`
 `;
 
 const Main = () => {
-  const [click] = useState(false);
+   const [click, setClick] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [exitDirection, setExitDirection] = useState('');
-
+ const handleClick = () => setClick(!click);
   const handleExit = (direction) => {
     setIsExiting(true);
     setExitDirection(direction);
@@ -163,10 +163,10 @@ const Main = () => {
         <LogoComponent theme={click ? 'dark' : 'light'} />
         <SocialIcons theme={click ? 'dark' : 'light'} />
 
-        <Center click={click} onClick={() => handleExit('')}>
-          <YinYang width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
-          <span>click here</span>
-        </Center>
+       <Center click={click}>
+                <YinYang  onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
+                <span>click here</span>
+            </Center>
 
         <Contact target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
           <motion.h2
