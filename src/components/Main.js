@@ -116,6 +116,20 @@ const Center = styled.button`
     display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
+ svg {
+    width: ${props => props.click ? '120px' : '200px'};
+    height: ${props => props.click ? '120px' : '200px'};
+
+    @media (max-width: 1024px) { // Medium screen size (e.g., tablets)
+      width: ${props => props.click ? '60px' : '100px'};
+      height: ${props => props.click ? '60px' : '100px'};
+    }
+
+    @media (max-width: 768px) { // Mobile screen size
+      width: ${props => props.click ? '90px' : '150px'};
+      height: ${props => props.click ? '90px' : '150px'};
+    }
+  }
 `;
 
 const DarkDiv = styled.div`
