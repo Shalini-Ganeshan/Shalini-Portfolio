@@ -59,56 +59,62 @@ const container = {
   
   }
 const Feats = () => {
-
     const [numbers, setNumbers] = useState(0);
-    const [isMobile, setIsMobile] = useState(false); // State to track screen size
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        let num = (window.innerHeight - 70) / 30;
-        setNumbers(parseInt(num));
-
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768); // Set isMobile to true if screen width is <= 768px
+        const updateNumbers = () => {
+            let num = (window.innerHeight - 70) / 30;
+            setNumbers(parseInt(num));
         };
 
-        // Initial check
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768); // Check if screen width is <= 768px (mobile breakpoint)
+        };
+
+        // Run once on mount
+        updateNumbers();
         handleResize();
 
-        // Add event listener for window resize
+        // Add event listeners for resize
         window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", updateNumbers);
 
-        // Cleanup event listener on component unmount
+        // Cleanup listeners on unmount
         return () => {
             window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", updateNumbers);
         };
     }, []);
 
     return (
         <MainContainer
             variants={container}
-            initial='hidden'
-            animate='show'
-            exit={{
-                opacity: 0, transition: { duration: 0.5 }
-            }}
+            initial="hidden"
+            animate="show"
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
             <Container>
                 <LogoComponent />
                 <PowerButton />
                 <SocialIcons />
-                {!isMobile && <AnchorComponent number={numbers} />} {/* Hide AnchorComponent on mobile */}
+                
+                {/* Show AnchorComponent only on medium and large screens */}
+                {!isMobile && <AnchorComponent number={numbers} />}
+                
                 <Center>
                     <Grid>
-                        {FeatsData.map(blog => {
-                            return <FeatComponent key={blog.id} blog={blog} />
-                        })}
+                        {FeatsData.map(blog => (
+                            <FeatComponent key={blog.id} blog={blog} />
+                        ))}
                     </Grid>
                 </Center>
                 <BigTitle text="FEATS" top="5rem" left="5rem" />
             </Container>
         </MainContainer>
-    )
-}
+    );
+};
 
 export default Feats;
+
 
