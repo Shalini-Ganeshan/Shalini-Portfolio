@@ -18,6 +18,9 @@ const Box = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+   @media (max-width: 768px) {
+    flex-direction: column; 
+  }
 `;
 
 const Main = styled(motion.div)`
@@ -34,7 +37,11 @@ const Main = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+@media (max-width: 768px) {
+    width: 90vw; /* Adjust width for small screens */
+    height: auto; /* Allow height to adjust based on content */
+    margin: 1rem 0; /* Add margin for spacing */
+  }
  background: rgba(0, 0, 0, 0.0);
   
   &:hover {
