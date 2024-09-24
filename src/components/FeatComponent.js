@@ -23,6 +23,13 @@ position:relative;
     background-color: ${(props) => props.theme.text};
     transition: all 0.3s ease;
   }
+    @media (max-width: 1024px) {  /* Medium screen sizes */
+    width: calc(12rem + 20vw);  /* Increase width */
+  }
+
+  @media (max-width: 768px) {  /* Small screen sizes */
+    width: calc(14rem + 25vw);  /* Increase width even more */
+  }
 `;
 
 const Image = styled.div`
