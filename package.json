@@ -48,5 +48,11 @@
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.24.7",
      "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "babel": {
+  "presets": ["react-app"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+  ]
+}
 }
