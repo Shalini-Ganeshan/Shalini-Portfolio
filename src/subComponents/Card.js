@@ -154,21 +154,9 @@ const Card = (props) => {
 
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsFlipped(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsFlipped(false);
-  };
-
-  // New handlers for touch events
-  const handleTouchStart = () => {
-    setIsFlipped(true);
-  };
-
-  const handleTouchEnd = () => {
-    setIsFlipped(false);
+  // New handler for toggling the flip state
+  const toggleFlip = () => {
+    setIsFlipped((prev) => !prev);
   };
 
   return (
@@ -176,10 +164,9 @@ const Card = (props) => {
       <FlipCard
         key={id}
         variants={Item}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart} // Touch start event
-        onTouchEnd={handleTouchEnd} // Touch end event
+        onMouseEnter={() => setIsFlipped(true)}
+        onMouseLeave={() => setIsFlipped(false)}
+        onTouchStart={toggleFlip} // Toggle flip on touch
       >
         <FlipCardFront>
           <Title>{name}</Title>
@@ -190,10 +177,9 @@ const Card = (props) => {
       <FlipCard
         key={id}
         variants={Item}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart} // Touch start event
-        onTouchEnd={handleTouchEnd} // Touch end event
+        onMouseEnter={() => setIsFlipped(true)}
+        onMouseLeave={() => setIsFlipped(false)}
+        onTouchStart={toggleFlip} // Toggle flip on touch
       >
         <FlipCardBack>
           <WorkImage src={image} alt={name} loading="lazy" />
