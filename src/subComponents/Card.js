@@ -14,13 +14,13 @@ const FlipCard = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 12rem; // Adjust for medium screens
-    height: 30vh; // Adjust height
-    margin-right: 10rem; // Adjust margin
+    height: 40vh; // Adjust height
+    margin-right: 12rem; // Adjust margin
   }
 
   @media (max-width: 480px) {
     width: 10rem; // Adjust for mobile screens
-    height: 25vh; // Adjust height
+    height: 33vh; // Adjust height
     margin-right: 10rem; // Remove margin
   }
 `;
