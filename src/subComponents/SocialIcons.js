@@ -18,6 +18,23 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.5rem 0;
   }
+
+  /* Responsive for medium screens (tablets, landscape) */
+  @media (max-width: 1024px) {
+    left: 1rem; /* Adjust positioning for medium screens */
+  }
+
+  /* Responsive for small screens (mobile) */
+  @media (max-width: 768px) {
+    flex-direction: row; /* Change layout to row for mobile */
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%); /* Center the icons horizontally */
+
+    & > *:not(:last-child) {
+      margin: 0 0.5rem; /* Adjust margin for row layout */
+    }
+  }
 `;
 
 const Line = styled(motion.span)`
@@ -25,6 +42,11 @@ const Line = styled(motion.span)`
   height: 8rem;
   background-color: ${(props) =>
     props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+
+  /* Hide the line on mobile screens */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SocialIcons = (props) => {
@@ -84,11 +106,6 @@ const SocialIcons = (props) => {
           />
         </a>
       </motion.div>
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.2 }}
-      ></motion.div>
 
       <Line
         color={props.theme}
