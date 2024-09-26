@@ -65,9 +65,9 @@ const Main = styled.div`
 
   @media (max-width: 480px) {
     width: 50vw; /* Adjust width for small screens */
-    height: 130vh;
+   
       
-         left: 2.5rem; 
+         left: 3.5rem; 
     
   }
 `;
