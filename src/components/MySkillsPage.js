@@ -13,13 +13,15 @@ import { loadFull } from 'tsparticles';
 const Box = styled.div`
   background-color: ${props => props.theme.body};
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-   @media (max-width: 768px) {
-    flex-direction: column; 
+ 
+    @media (max-width: 768px) {
+     height: 140vh;
+   flex-direction: column; 
   }
  
 `;
@@ -47,7 +49,7 @@ const Main = styled(motion.div)`
   @media (max-width: 480px) {
     width: 60vw; /* Adjust width for small screens */
     height: auto;
-    top:10rem;
+    top:5rem;
   }
 
   background: rgba(0, 0, 0, 0.0);
