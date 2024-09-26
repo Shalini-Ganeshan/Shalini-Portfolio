@@ -47,6 +47,7 @@ const Main = styled(motion.div)`
   @media (max-width: 480px) {
     width: 60vw; /* Adjust width for small screens */
     height: auto;
+    top:10%;
   }
 
   background: rgba(0, 0, 0, 0.0);
