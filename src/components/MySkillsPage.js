@@ -22,13 +22,12 @@ const Box = styled.div`
     flex-direction: column; 
   }
 `;
-
 const Main = styled(motion.div)`
   border: 2px solid ${props => props.theme.text};
   color: ${props => props.theme.text};
- background-color: ${props => props.theme.body}; 
+  background-color: ${props => props.theme.body}; 
   padding: 2rem;
-  width: 30vw;
+  width: 30vw; /* Default width for large screens */
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
@@ -37,19 +36,25 @@ const Main = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-@media (max-width: 768px) {
-    width: 90vw; /* Adjust width for small screens */
+
+  @media (max-width: 768px) {
+    width: 80vw; /* Adjust width for medium screens */
     height: auto; /* Allow height to adjust based on content */
     margin: 1rem 0; /* Add margin for spacing */
   }
- background: rgba(0, 0, 0, 0.0);
-  
+
+  @media (max-width: 480px) {
+    width: 90vw; /* Adjust width for small screens */
+  }
+
+  background: rgba(0, 0, 0, 0.0);
+
   &:hover {
     color: ${props => props.theme.body};
     background-color: rgba(0, 0, 0, 0.6); /* Transparent black */
-    
   }
 `;
+
 
 const Title = styled.h2`
   display: flex;
