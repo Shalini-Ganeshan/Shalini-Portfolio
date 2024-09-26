@@ -207,7 +207,7 @@ const Main = () => {
 
   const handleUp = () => handleExit('up');
   const handleRight = () => handleExit('right');
-  const handleLeft = () => handleExit('left');
+
 
   return (
     <MainContainer
