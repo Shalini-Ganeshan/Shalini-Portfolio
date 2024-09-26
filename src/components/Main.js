@@ -42,7 +42,9 @@ const Contact = styled.a`
   }
 ;`
 const Resume = styled.a`
-color: ${props => props.theme.text};
+
+color: ${props => props.click ? props.theme.body : props.theme.text};
+
 position: absolute;
 top: 2rem;
 left: calc(16rem + 3vw);
@@ -62,7 +64,9 @@ const BLOG = styled(NavLink)`
 ;`
 
 const WORK = styled(NavLink)`
-  color: ${props => props.click ? props.theme.body : props.theme.text};
+
+color: ${props => props.click ? props.theme.body : props.theme.text};
+
   position: absolute;
   top: 40%;
   left: calc(1rem + 2vw);
@@ -85,7 +89,9 @@ const BottomBar = styled.div`
 ;`
 
 const ABOUT = styled(NavLink)`
-  color: ${props => props.click ? props.theme.body : props.theme.text};
+
+color: ${props => props.click ? props.theme.body : props.theme.text};
+
   text-decoration: none;
   z-index: 1;
 ;
