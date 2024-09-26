@@ -59,12 +59,15 @@ const Main = styled.div`
     width: 60vw; /* Adjust width for medium screens */
     height: auto; /* Allow height to adjust based on content */
     margin: 1rem 0; 
+    left: calc(2rem + 3vw);
      top:2rem;/* Add margin for spacing */
   }
 
   @media (max-width: 480px) {
     width: 50vw; /* Adjust width for small screens */
-    height: auto;
+    height: 130vh;
+      
+         left: 1.5rem; 
     top:5rem;
   }
 `;
