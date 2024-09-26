@@ -41,7 +41,14 @@ const Contact = styled.a`
     left: calc(8rem + 2vw); 
   }
 `;
-
+const Resume = styled.a`
+color: ${props => props.theme.text};
+position: absolute;
+top: 2rem;
+left: calc(16rem + 3vw);
+text-decoration: none;
+z-index:1;
+`
 
 
 const BLOG = styled(NavLink)`
