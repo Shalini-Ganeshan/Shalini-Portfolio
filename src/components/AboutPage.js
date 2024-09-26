@@ -55,6 +55,18 @@ const Main = styled.div`
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
+  @media (max-width: 768px) {
+    width: 60vw; /* Adjust width for medium screens */
+    height: auto; /* Allow height to adjust based on content */
+    margin: 1rem 0; 
+     top:2rem;/* Add margin for spacing */
+  }
+
+  @media (max-width: 480px) {
+    width: 50vw; /* Adjust width for small screens */
+    height: auto;
+    top:5rem;
+  }
 `;
 
 const ParticleBackground = () => {
