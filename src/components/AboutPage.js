@@ -66,7 +66,7 @@ const Main = styled.div`
   @media (max-width: 480px) {
     width: 50vw; /* Adjust width for small screens */
     font-size: calc(0.4rem + 0.6vw); /* Reduce font size for small screens */
-      
+      height:80vh;
          left: 3.5rem; 
     
   }
