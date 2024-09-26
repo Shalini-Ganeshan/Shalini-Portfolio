@@ -162,16 +162,39 @@ const Card = (props) => {
     setIsFlipped(false);
   };
 
+  // New handlers for touch events
+  const handleTouchStart = () => {
+    setIsFlipped(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsFlipped(false);
+  };
+
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      <FlipCard key={id} variants={Item} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <FlipCard
+        key={id}
+        variants={Item}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart} // Touch start event
+        onTouchEnd={handleTouchEnd} // Touch end event
+      >
         <FlipCardFront>
           <Title>{name}</Title>
           <Description>{description}</Description>
         </FlipCardFront>
       </FlipCard>
 
-      <FlipCard key={id} variants={Item} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <FlipCard
+        key={id}
+        variants={Item}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart} // Touch start event
+        onTouchEnd={handleTouchEnd} // Touch end event
+      >
         <FlipCardBack>
           <WorkImage src={image} alt={name} loading="lazy" />
           <Line />
