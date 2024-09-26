@@ -20,14 +20,7 @@ const MainContainer = styled(motion.div)`
     font-weight: 500;
   }
 ;`
-const Resume = styled.a`
-color: ${props => props.theme.text};
-position: absolute;
-top: 2rem;
-left: calc(16rem + 3vw);
-text-decoration: none;
-z-index:1;
-`
+
 const Container = styled.div`
   padding: 2rem;
 ;`
