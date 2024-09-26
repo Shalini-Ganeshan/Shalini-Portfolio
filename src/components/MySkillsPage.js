@@ -13,7 +13,7 @@ import { loadFull } from 'tsparticles';
 const Box = styled.div`
   background-color: ${props => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  height: auto;
   position: relative;
   display: flex;
   justify-content: space-evenly;
