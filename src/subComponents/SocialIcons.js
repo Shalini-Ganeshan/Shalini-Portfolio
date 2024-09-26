@@ -49,15 +49,15 @@ const IconWrapper = styled(motion.div)`
   
   @media (max-width: 1024px) { /* Medium screen sizes */
     svg {
-      width: 20px; /* Reduced icon size */
-      height: 20px; /* Reduced icon size */
+      width: 30px; /* Reduced icon size */
+      height: 30px; /* Reduced icon size */
     }
   }
 
   @media (max-width: 768px) { /* Small screen sizes */
     svg {
-      width: 15px; /* Further reduced icon size */
-      height: 15px; /* Further reduced icon size */
+      width: 25px; /* Further reduced icon size */
+      height: 25px; /* Further reduced icon size */
     }
   }
 `;
