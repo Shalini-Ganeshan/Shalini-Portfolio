@@ -134,8 +134,8 @@ const Center = styled.button`
     }
 
     @media (max-width: 768px) { 
-      width: ${props => props.click ? '70px' : '130px'};
-      height: ${props => props.click ? '70px' : '130px'};
+      width: ${props => props.click ? '60px' : '120px'};
+      height: ${props => props.click ? '60px' : '120px'};
     }
   }
 `;
