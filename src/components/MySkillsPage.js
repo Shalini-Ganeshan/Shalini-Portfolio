@@ -21,6 +21,15 @@ const Box = styled.div`
    @media (max-width: 768px) {
     flex-direction: column; 
   }
+    @media (max-width: 768px) {
+    width: 80vw; /* Adjust width for medium screens */
+    height: auto; /* Allow height to adjust based on content */
+    margin: 1rem 0; /* Add margin for spacing */
+  }
+
+  @media (max-width: 480px) {
+    width: 90vw; /* Adjust width for small screens */
+  }
 `;
 const Main = styled(motion.div)`
   border: 2px solid ${props => props.theme.text};
