@@ -8,7 +8,7 @@ const Icons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
   position: fixed;
   bottom: 0;
   left: 2rem;
@@ -19,21 +19,12 @@ const Icons = styled.div`
     margin: 0.5rem 0;
   }
 
-  /* Responsive for medium screens (tablets, landscape) */
-  @media (max-width: 1024px) {
-    left: 1rem; /* Adjust positioning for medium screens */
+  @media (max-width: 1024px) { /* Medium screen sizes */
+    left: 1.5rem;
   }
 
-  /* Responsive for small screens (mobile) */
-  @media (max-width: 768px) {
-    flex-direction: row; /* Change layout to row for mobile */
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%); /* Center the icons horizontally */
-
-    & > *:not(:last-child) {
-      margin: 0 0.5rem; /* Adjust margin for row layout */
-    }
+  @media (max-width: 768px) { /* Small screen sizes */
+    left: 1rem;
   }
 `;
 
@@ -43,9 +34,12 @@ const Line = styled(motion.span)`
   background-color: ${(props) =>
     props.color === "dark" ? DarkTheme.text : DarkTheme.body};
 
-  /* Hide the line on mobile screens */
-  @media (max-width: 768px) {
-    display: none;
+  @media (max-width: 1024px) { /* Medium screen sizes */
+    height: 6rem;
+  }
+
+  @media (max-width: 768px) { /* Small screen sizes */
+    height: 4rem;
   }
 `;
 
@@ -106,6 +100,11 @@ const SocialIcons = (props) => {
           />
         </a>
       </motion.div>
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+      ></motion.div>
 
       <Line
         color={props.theme}
