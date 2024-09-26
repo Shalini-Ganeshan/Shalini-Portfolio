@@ -147,7 +147,7 @@ const Card = (props) => {
       <FlipCard key={id} variants={Item}  onMouseEnter={handleMouseEnter} 
     onMouseLeave={handleMouseLeave}>
         <FlipCardBack>
-          <WorkImage src={image} alt={name} />
+          <WorkImage src={image} alt={name} loading="lazy" />
           <Line />
           <Tags>
             {tags.map((t, id) => (
