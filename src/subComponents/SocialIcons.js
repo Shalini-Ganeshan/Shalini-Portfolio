@@ -56,8 +56,8 @@ const IconWrapper = styled(motion.div)`
 
   @media (max-width: 768px) { /* Small screen sizes */
     svg {
-      width: 25px; /* Further reduced icon size */
-      height: 25px; /* Further reduced icon size */
+      width: 20px; /* Further reduced icon size */
+      height: 20px; /* Further reduced icon size */
     }
   }
 `;
