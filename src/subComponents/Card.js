@@ -1,5 +1,5 @@
-import { useState } from 'react'; // Import useState for managing flip state
-import ReactCardFlip from 'react-card-flip'; // Import the react-card-flip library
+import { useState } from 'react';
+import ReactCardFlip from 'react-card-flip';
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
@@ -11,6 +11,18 @@ const FlipCard = styled(motion.div)`
   width: 16rem;
   height: 40vh;
   margin-right: 12rem;
+
+  @media (max-width: 768px) {
+    width: 12rem; // Adjust for medium screens
+    height: 30vh; // Adjust height
+    margin-right: 8rem; // Adjust margin
+  }
+
+  @media (max-width: 480px) {
+    width: 10rem; // Adjust for mobile screens
+    height: 25vh; // Adjust height
+    margin-right: 0; // Remove margin
+  }
 `;
 
 const FlipCardFront = styled.div`
@@ -20,7 +32,7 @@ const FlipCardFront = styled.div`
   backface-visibility: hidden;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem; // Reduced padding
   border-radius: 0 50px 0 50px;
   display: flex;
   flex-direction: column;
@@ -38,7 +50,7 @@ const FlipCardBack = styled.div`
   backface-visibility: hidden;
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem; // Reduced padding
   border-radius: 0 50px 0 50px;
   display: flex;
   flex-direction: column;
@@ -47,13 +59,21 @@ const FlipCardBack = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(1em + 0.3vw); // Reduced size
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; // Reduced margin
+
+  @media (max-width: 768px) {
+    font-size: calc(0.9em + 0.3vw); // Further adjust for medium screens
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.8em + 0.3vw); // Further adjust for mobile screens
+  }
 `;
 
 const Description = styled.h2`
-  font-size: calc(0.8em + 0.3vw);
+  font-size: calc(0.7em + 0.2vw); // Reduced size
   font-family: 'Karla', sans-serif;
   font-weight: 500;
   text-align: center;
@@ -74,8 +94,8 @@ const Tags = styled.span`
 `;
 
 const Tag = styled.span`
-  margin-right: 1rem;
-  font-size: calc(0.8em + 0.3vw);
+  margin-right: 0.5rem; // Reduced margin
+  font-size: calc(0.7em + 0.2vw); // Reduced size
 `;
 
 const Footer = styled.footer`
@@ -88,9 +108,17 @@ const Link = styled.a`
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   text-decoration: none;
-  padding: 0.5rem calc(2rem + 2vw);
+  padding: 0.4rem calc(1.5rem + 1vw); // Reduced padding
   border-radius: 0 0 0 50px;
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(0.9em + 0.3vw); // Adjusted size
+
+  @media (max-width: 768px) {
+    font-size: calc(0.8em + 0.3vw); // Further adjust for medium screens
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.7em + 0.2vw); // Further adjust for mobile screens
+  }
 `;
 
 const Git = styled.a`
@@ -135,17 +163,15 @@ const Card = (props) => {
   };
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
-      <FlipCard key={id} variants={Item}   onMouseEnter={handleMouseEnter} 
-    onMouseLeave={handleMouseLeave}>
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <FlipCard key={id} variants={Item} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <FlipCardFront>
           <Title>{name}</Title>
           <Description>{description}</Description>
         </FlipCardFront>
       </FlipCard>
 
-      <FlipCard key={id} variants={Item}  onMouseEnter={handleMouseEnter} 
-    onMouseLeave={handleMouseLeave}>
+      <FlipCard key={id} variants={Item} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <FlipCardBack>
           <WorkImage src={image} alt={name} loading="lazy" />
           <Line />
