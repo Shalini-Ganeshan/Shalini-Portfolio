@@ -8,7 +8,7 @@ const Icons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   position: fixed;
   bottom: 0;
   left: 2rem;
@@ -43,10 +43,29 @@ const Line = styled(motion.span)`
   }
 `;
 
+const IconWrapper = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  
+  @media (max-width: 1024px) { /* Medium screen sizes */
+    svg {
+      width: 20px; /* Reduced icon size */
+      height: 20px; /* Reduced icon size */
+    }
+  }
+
+  @media (max-width: 768px) { /* Small screen sizes */
+    svg {
+      width: 15px; /* Further reduced icon size */
+      height: 15px; /* Further reduced icon size */
+    }
+  }
+`;
+
 const SocialIcons = (props) => {
   return (
     <Icons>
-      <motion.div
+      <IconWrapper
         initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
@@ -63,8 +82,8 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
           />
         </a>
-      </motion.div>
-      <motion.div
+      </IconWrapper>
+      <IconWrapper
         initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
@@ -81,8 +100,8 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
           />
         </a>
-      </motion.div>
-      <motion.div
+      </IconWrapper>
+      <IconWrapper
         initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
@@ -99,7 +118,7 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
           />
         </a>
-      </motion.div>
+      </IconWrapper>
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
