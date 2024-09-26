@@ -32,9 +32,7 @@ const Contact = styled.a`
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
-`;
-
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     left: calc(12rem + 3vw);
   }
 
@@ -42,6 +40,9 @@ const Contact = styled.a`
   @media (max-width: 768px) {
     left: calc(8rem + 2vw); 
   }
+`;
+
+
 
 const BLOG = styled(NavLink)`
   color: ${props => props.theme.text};
