@@ -179,7 +179,7 @@ const Main = () => {
            exitDirection === 'up' ? [0, 0] : [0, 0],
         y: exitDirection === 'up' ? [0, -2000] : 0,
         opacity: 1,
-        transition: { duration: 0.5 }
+        transition: { duration: 1.5 }
       }}
     >
       <DarkDiv click={click} />
