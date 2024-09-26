@@ -59,13 +59,13 @@ const Main = styled.div`
     width: 60vw; /* Adjust width for medium screens */
     height: auto; /* Allow height to adjust based on content */
     margin: 1rem 0; 
-    left: calc(2rem + 3vw);
-     top:2rem;/* Add margin for spacing */
+    
+     top:5rem;/* Add margin for spacing */
   }
 
   @media (max-width: 480px) {
     width: 50vw; /* Adjust width for small screens */
-   
+    font-size: calc(0.4rem + 0.6vw); /* Reduce font size for small screens */
       
          left: 3.5rem; 
     
