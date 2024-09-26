@@ -69,7 +69,7 @@ const Feats = () => {
         };
 
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768); // Check if screen width is <= 768px (mobile breakpoint)
+            setIsMobile(window.innerWidth <= 700); // Check if screen width is <= 700px (mobile breakpoint)
         };
 
         // Run once on mount
