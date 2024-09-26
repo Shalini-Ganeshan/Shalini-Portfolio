@@ -209,7 +209,7 @@ const Main = () => {
             Say hi..
           </motion.h2>
         </Contact>
-        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
+        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com" click={click}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -229,7 +229,7 @@ const Main = () => {
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/work" onClick={handleRight}>
+        <WORK to="/work" onClick={handleRight} click={click}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -240,7 +240,7 @@ const Main = () => {
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" onClick={handleUp}>
+          <ABOUT to="/about" onClick={handleUp} click={click}>
             <motion.h2
               initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
