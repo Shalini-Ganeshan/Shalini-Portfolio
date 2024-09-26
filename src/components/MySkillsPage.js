@@ -41,7 +41,7 @@ const Main = styled(motion.div)`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    width: 70vw; /* Adjust width for medium screens */
+    width: 60vw; /* Adjust width for medium screens */
     height: auto; /* Allow height to adjust based on content */
     margin: 1rem 0; /* Add margin for spacing */
   }
