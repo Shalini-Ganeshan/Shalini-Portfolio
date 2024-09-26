@@ -67,8 +67,8 @@ const Main = styled.div`
     width: 50vw; /* Adjust width for small screens */
     height: 130vh;
       
-         left: 1.5rem; 
-    top:5rem;
+         left: 2.5rem; 
+    
   }
 `;
 
