@@ -44,13 +44,13 @@ const Main = styled(motion.div)`
     width: 60vw; /* Adjust width for medium screens */
     height: auto; /* Allow height to adjust based on content */
     margin: 1rem 0; 
-     top:5rem;/* Add margin for spacing */
+     top:2rem;/* Add margin for spacing */
   }
 
   @media (max-width: 480px) {
     width: 60vw; /* Adjust width for small screens */
     height: auto;
-    top:6rem;
+    top:5rem;
   }
 
   background: rgba(0, 0, 0, 0.0);
