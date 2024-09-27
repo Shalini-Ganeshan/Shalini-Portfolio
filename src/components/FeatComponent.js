@@ -24,12 +24,12 @@ const Box = styled(motion.a)`
   }
 
   @media (max-width: 1024px) {
-    width: calc(12rem + 20vw);
-    height: 18rem;  /* Adjust height for medium screens */
+    width: calc(14rem + 20vw);
+    height: 20rem;  /* Adjust height for medium screens */
   }
 
   @media (max-width: 768px) {
-    width: calc(8rem + 15vw);  /* Smaller width for mobile */
+    width: calc(12rem + 20vw);  /* Smaller width for mobile */
     height: 15rem;  /* Smaller height for mobile */
     padding: 0.5rem;  /* Less padding for mobile */
   }
@@ -37,7 +37,7 @@ const Box = styled(motion.a)`
 
 const Image = styled.img`
   width: 100%;
-  height: 60%;
+  height: 70%;
   object-fit: contain; /* Ensures the entire image is visible */
   border: 1px solid transparent;
 
@@ -60,12 +60,15 @@ const Title = styled.h3`
   }
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;  /* Smaller font size for mobile */
+    font-size: 0.9rem;  /* Smaller font size for mobile */
   }
 `;
 
 const HashTags = styled.div`
   padding: 0.5rem 0;
+   @media (max-width: 768px) {
+    font-size: 0.5rem;  /* Smaller font size for mobile */
+  }
 `;
 
 const Tag = styled.span`
@@ -74,6 +77,9 @@ const Tag = styled.span`
 
 const Date = styled.span`
   padding: 0.5rem 0;
+   @media (max-width: 768px) {
+    font-size: 0.4rem;  /* Smaller font size for mobile */
+  }
 `;
 
 const Container = styled(motion.div)``;
