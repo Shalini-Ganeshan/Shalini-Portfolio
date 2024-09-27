@@ -30,7 +30,7 @@ const Box = styled(motion.a)`
 
   @media (max-width: 768px) {
     width: calc(10rem + 20vw);  /* Smaller width for mobile */
-    height: 14rem;  /* Smaller height for mobile */
+    height: 18rem;  /* Smaller height for mobile */
     padding: 0.5rem;  /* Less padding for mobile */
   }
 `;
@@ -69,6 +69,7 @@ const HashTags = styled.div`
   padding: 0.5rem 0;
    @media (max-width: 768px) {
     font-size: 0.8rem; 
+     padding: 0.3rem 0;
   
   }
 `;
