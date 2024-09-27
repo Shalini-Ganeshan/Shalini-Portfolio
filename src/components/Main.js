@@ -35,10 +35,9 @@ const Contact = styled.a`
   @media (max-width: 1024px) {
     left: calc(9rem + 3vw);
   }
-
- 
   @media (max-width: 600px) {
-    left: calc(8rem + 4vw); 
+    left: calc(4.5rem + 4vw); 
+    font-size:0.7rem;
   }
 ;`
 const Resume = styled.a`
@@ -51,8 +50,10 @@ z-index:1;
 @media (max-width: 1024px) {
     left: calc(27rem + 3vw);
   }
-
-`
+    @media (max-width: 600px) {
+  font-size:0.7rem;
+  left: calc(14rem + 3vw);
+}`
 
 
 const BLOG = styled(NavLink)`
@@ -63,7 +64,12 @@ const BLOG = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
+  @media (max-width: 600px) {
+    right: calc(0.4rem + 2vw); 
+    font-size:0.7rem;
+  }
 ;`
+
 
 const WORK = styled(NavLink)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
@@ -78,6 +84,7 @@ const WORK = styled(NavLink)`
  
   @media (max-width: 600px) {
     left: calc(0.4rem + 2vw); 
+    font-size:0.7rem;
   }
 ;`
 
@@ -89,18 +96,27 @@ const BottomBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  @media (max-width: 600px) {
+  font-size:0.7rem;
+}
 ;`
 
 const ABOUT = styled(NavLink)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1;
+  @media (max-width: 600px) {
+  font-size:0.7rem;
+}
 ;
 `
 const SKILLS = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1;
+  @media (max-width: 600px) {
+  font-size:0.7rem;
+}
 ;`
 
 const rotate = keyframes`
