@@ -19,7 +19,7 @@ const MainContainer = styled(motion.div)`
 `;
 
 const Container = styled.div`
-  background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`};
+  background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
   height: auto;
   position: relative;
@@ -39,7 +39,7 @@ const Grid = styled.div`
   grid-gap: calc(1rem + 2vw);
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
   }
 `;
 
@@ -74,7 +74,7 @@ const Feats = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700); // Check if screen width is <= 700px (mobile breakpoint)
+      setIsMobile(window.innerWidth <= 700); // Mobile breakpoint
     };
 
     // Run once on mount
