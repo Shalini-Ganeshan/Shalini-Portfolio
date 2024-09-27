@@ -30,7 +30,7 @@ const Main = styled(motion.div)`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body}; 
   padding: 2rem;
-  width: 30vw; /* Default width for large screens */
+  width: 30vw; 
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
@@ -41,14 +41,14 @@ const Main = styled(motion.div)`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    width: 60vw; /* Adjust width for medium screens */
-    height: auto; /* Allow height to adjust based on content */
+    width: 60vw; 
+    height: auto; 
     margin: 1rem 0; 
-     top:2rem;/* Add margin for spacing */
+     top:2rem;
   }
 
   @media (max-width: 480px) {
-    width: 60vw; /* Adjust width for small screens */
+    width: 60vw; 
     height: auto;
     top:5rem;
   }
@@ -57,7 +57,7 @@ const Main = styled(motion.div)`
 
   &:hover {
     color: ${props => props.theme.body};
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent black */
+    background-color: rgba(0, 0, 0, 0.6); 
   }
 `;
 
