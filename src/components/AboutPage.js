@@ -36,7 +36,7 @@ const Myself = styled.div`
   }
     @media (max-width: 600px) {
     top: 0; 
-    right: 1%; 
+    right: 0; 
   }
 `;
 
