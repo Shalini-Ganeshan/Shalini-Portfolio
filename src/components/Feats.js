@@ -24,8 +24,8 @@ const Box = styled(motion.a)`
   }
 
   @media (max-width: 768px) {
-    width: calc(10rem + 15vw); /* Adjust for mobile if necessary */
-    height: 20rem; /* Adjust for mobile if necessary */
+    width: calc(13rem + 15vw); /* Adjust for mobile if necessary */
+    height: 23rem; /* Adjust for mobile if necessary */
   }
 `;
 
