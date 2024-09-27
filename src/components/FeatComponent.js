@@ -25,12 +25,12 @@ const Box = styled(motion.a)`
 
   @media (max-width: 1024px) {
     width: calc(14rem + 20vw);
-    height: 20rem;  /* Adjust height for medium screens */
+    height: 22rem;  /* Adjust height for medium screens */
   }
 
   @media (max-width: 768px) {
     width: calc(12rem + 20vw);  /* Smaller width for mobile */
-    height: 15rem;  /* Smaller height for mobile */
+    height: 18rem;  /* Smaller height for mobile */
     padding: 0.5rem;  /* Less padding for mobile */
   }
 `;
@@ -67,7 +67,7 @@ const Title = styled.h3`
 const HashTags = styled.div`
   padding: 0.5rem 0;
    @media (max-width: 768px) {
-    font-size: 0.5rem;  /* Smaller font size for mobile */
+    font-size: 0.8rem;  /* Smaller font size for mobile */
   }
 `;
 
@@ -78,7 +78,7 @@ const Tag = styled.span`
 const Date = styled.span`
   padding: 0.5rem 0;
    @media (max-width: 768px) {
-    font-size: 0.4rem;  /* Smaller font size for mobile */
+    font-size: 0.7rem;  /* Smaller font size for mobile */
   }
 `;
 
