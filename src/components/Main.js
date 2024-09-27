@@ -33,23 +33,25 @@ const Contact = styled.a`
   text-decoration: none;
   z-index: 1;
   @media (max-width: 1024px) {
-    left: calc(12rem + 3vw);
+    left: calc(9rem + 3vw);
   }
 
  
-  @media (max-width: 768px) {
-    left: calc(8rem + 2vw); 
+  @media (max-width: 600px) {
+    left: calc(8rem + 4vw); 
   }
 ;`
 const Resume = styled.a`
-
-color: ${props => props.click ? props.theme.body : props.theme.text};
-
+color: ${props => props.theme.text};
 position: absolute;
 top: 2rem;
 left: calc(16rem + 3vw);
 text-decoration: none;
 z-index:1;
+@media (max-width: 1024px) {
+    left: calc(27rem + 3vw);
+  }
+
 `
 
 
@@ -64,17 +66,18 @@ const BLOG = styled(NavLink)`
 ;`
 
 const WORK = styled(NavLink)`
-
-color: ${props => props.click ? props.theme.body : props.theme.text};
-
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   top: 40%;
   left: calc(1rem + 2vw);
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
-   @media (max-width: 768px) { 
-    top: 30%; 
+ 
+
+ 
+  @media (max-width: 600px) {
+    left: calc(0.4rem + 2vw); 
   }
 ;`
 
@@ -89,9 +92,7 @@ const BottomBar = styled.div`
 ;`
 
 const ABOUT = styled(NavLink)`
-
-color: ${props => props.click ? props.theme.body : props.theme.text};
-
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1;
 ;
@@ -185,7 +186,7 @@ const Main = () => {
            exitDirection === 'up' ? [0, 0] : [0, 0],
         y: exitDirection === 'up' ? [0, -2000] : 0,
         opacity: 1,
-        transition: { duration: 1.5 }
+        transition: { duration: 0.5 }
       }}
     >
       <DarkDiv click={click} />
@@ -209,7 +210,7 @@ const Main = () => {
             Say hi..
           </motion.h2>
         </Contact>
-        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com" click={click}>
+        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -229,7 +230,7 @@ const Main = () => {
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/work" onClick={handleRight} click={click}>
+        <WORK to="/work" onClick={handleRight}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -240,7 +241,7 @@ const Main = () => {
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" onClick={handleUp} click={click}>
+          <ABOUT to="/about" onClick={handleUp}>
             <motion.h2
               initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
