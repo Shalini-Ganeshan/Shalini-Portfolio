@@ -43,7 +43,7 @@ const Grid = styled.div`
   }
 `;
 
-// Framer-motion config
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -66,18 +66,18 @@ const Feats = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700); // Mobile breakpoint
+      setIsMobile(window.innerWidth <= 700); 
     };
 
-    // Run once on mount
+    
     updateNumbers();
     handleResize();
 
-    // Add event listeners for resize
+    
     window.addEventListener("resize", handleResize);
     window.addEventListener("resize", updateNumbers);
 
-    // Cleanup listeners on unmount
+  
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("resize", updateNumbers);
@@ -96,7 +96,7 @@ const Feats = () => {
         <PowerButton />
         <SocialIcons />
         
-        {/* Show AnchorComponent only on medium and large screens */}
+        
         {!isMobile && <AnchorComponent number={numbers} />}
         
         <Center>
