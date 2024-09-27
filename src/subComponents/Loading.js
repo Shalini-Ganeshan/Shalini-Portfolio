@@ -1,26 +1,26 @@
-// src/components/Loading.js
+
 
 import React from 'react';
 import styled from 'styled-components';
 
-// Create a styled div for the loading message
+
 const LoadingContainer = styled.div`
-  position: fixed; /* Use fixed positioning to cover the entire screen */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
-  display: flex; /* Use flexbox to center content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
   font-size: 24px;
   font-family: 'Karla', sans-serif;
   font-weight: 600;
-  color: rgb(252, 246, 244); /* Updated text color */
-  background-color: black; /* Background color */
-  z-index: 9999; /* Ensure it appears on top of other content */
+  color: rgb(252, 246, 244);
+  background-color: black; 
+  z-index: 9999; 
    @media (max-width: 480px) {
-    font-size: 16px; /* Even smaller font size for mobile phones */
+    font-size: 16px;
   }
 `;
 
