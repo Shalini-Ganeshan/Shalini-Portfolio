@@ -10,18 +10,17 @@ const Logo = styled.h1`
   left: 2rem;
   top: 2rem;
   z-index: 3;
-  font-size: 2.5rem; /* Default font size for large screens */
+  font-size: 2.5rem; 
 
-  /* For medium screen sizes (tablets, landscape) */
   @media (max-width: 1024px) {
-    font-size: 2rem; /* Decrease font size */
+    font-size: 2rem; 
     left: 1.5rem;
     top: 1.5rem;
   }
 
-  /* For small screen sizes (mobile devices) */
+
   @media (max-width: 768px) {
-    font-size: 1.5rem; /* Further decrease font size */
+    font-size: 1.5rem; 
     left: 1rem;
     top: 1rem;
   }
