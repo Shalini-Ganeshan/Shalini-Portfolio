@@ -1,117 +1,115 @@
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import img from "../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
+import LogoComponent from '../subComponents/LogoComponent';
+import SocialIcons from '../subComponents/SocialIcons';
+import PowerButton from '../subComponents/PowerButton';
+import { FeatsData } from '../data/FeatsData';
+import FeatComponent from './FeatComponent';
+import AnchorComponent from '../subComponents/Anchor';
+import BigTitle from "../subComponents/BigTitlte";
+import { motion } from 'framer-motion';
 
-const Box = styled(motion.a)`
-  width: calc(12rem + 20vw); /* Increase the width */
-  height: 25rem; /* Increase the height */
-  text-decoration: none;
-  padding: 1rem;
-  color: ${(props) => props.theme.text};
-  border: 2px solid ${(props) => props.theme.text};
-  backdrop-filter: blur(2px);
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  z-index: 5;
-
-  &:hover {
-    color: ${(props) => props.theme.body};
-    background-color: ${(props) => props.theme.text};
-    transition: all 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    width: calc(13rem + 15vw); /* Adjust for mobile if necessary */
-    height: 23rem; /* Adjust for mobile if necessary */
-  }
+const MainContainer = styled(motion.div)`
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 `;
 
-const Image = styled.img`
+const Container = styled.div`
+  background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.8)`};
   width: 100%;
-  height: 60%; /* Adjust as needed */
-  object-fit: cover; /* Ensure the image covers the area */
-  border: 1px solid transparent;
-
-  ${Box}:hover & {
-    border: 1px solid ${(props) => props.theme.body}; /* Border color on hover */
-  }
+  height: auto;
+  position: relative;
+  padding-bottom: 5rem;
 `;
 
-const Title = styled.h3`
-  color: inherit;
-  padding: 0.5rem 0;
-  padding-top: 1rem;
-  font-family: "Karla", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem; /* Reduce font size */
-  border-bottom: 1px solid ${(props) => props.theme.text};
-  text-align: center;
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
+  grid-gap: calc(1rem + 2vw);
 
   @media (max-width: 768px) {
-    font-size: 0.8rem; /* Further reduce font size on mobile */
+    grid-template-columns: 1fr; 
   }
 `;
 
-const HashTags = styled.div`
-  padding: 0.5rem 0;
-    @media (max-width: 768px) {
-    font-size: 0.5rem; /* Further reduce font size on mobile */
-  }
-`;
-
-const Tag = styled.span`
-  padding-right: 0.5rem;
-`;
-
-const Date = styled.span`
-  padding: 0.5rem 0;
-     @media (max-width: 768px) {
-    font-size: 0.3rem; /* Further reduce font size on mobile */
-  }
-`;
-
-const Container = styled(motion.div)``;
-
-// Framer motion configuration
-const Item = {
-  hidden: {
-    scale: 0,
-  },
+// Framer-motion config
+const container = {
+  hidden: { opacity: 0 },
   show: {
-    scale: 1,
+    opacity: 1,
     transition: {
-      type: "spring",
+      staggerChildren: 0.5,
       duration: 0.5,
     },
   },
 };
 
-const FeatComponent = (props) => {
-  const { name, tags, date, imgSrc, link } = props.blog;
+const Feats = () => {
+  const [numbers, setNumbers] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateNumbers = () => {
+      let num = (window.innerHeight - 70) / 30;
+      setNumbers(parseInt(num));
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 700); // Mobile breakpoint
+    };
+
+    // Run once on mount
+    updateNumbers();
+    handleResize();
+
+    // Add event listeners for resize
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", updateNumbers);
+
+    // Cleanup listeners on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", updateNumbers);
+    };
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.1, ease: "easeIn" }}
+    <MainContainer
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      <Container variants={Item}>
-        <Box target="_blank" href={`${link}`}>
-          {/* Lazy loaded image */}
-          <Image src={imgSrc} alt={name} loading="lazy" />
-          <Title>{name}</Title>
-          <HashTags>
-            {tags.map((t, id) => (
-              <Tag key={id}>#{t}</Tag>
+      <Container>
+        <LogoComponent />
+        <PowerButton />
+        <SocialIcons />
+        
+        {/* Show AnchorComponent only on medium and large screens */}
+        {!isMobile && <AnchorComponent number={numbers} />}
+        
+        <Center>
+          <Grid>
+            {FeatsData.map(blog => (
+              <FeatComponent key={blog.id} blog={blog} />
             ))}
-          </HashTags>
-          <Date>{date}</Date>
-        </Box>
+          </Grid>
+        </Center>
+        <BigTitle text="FEATS" top="5rem" left="5rem" />
       </Container>
-    </motion.div>
+    </MainContainer>
   );
 };
 
-export default FeatComponent;
+export default Feats;
