@@ -25,10 +25,13 @@ const Box = styled(motion.a)`
 
   @media (max-width: 1024px) {
     width: calc(12rem + 20vw);
+    height: 18rem;  /* Adjust height for medium screens */
   }
 
   @media (max-width: 768px) {
-    width: calc(10rem + 20vw);
+    width: calc(8rem + 15vw);  /* Smaller width for mobile */
+    height: 15rem;  /* Smaller height for mobile */
+    padding: 0.5rem;  /* Less padding for mobile */
   }
 `;
 
@@ -54,6 +57,10 @@ const Title = styled.h3`
 
   ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;  /* Smaller font size for mobile */
   }
 `;
 
