@@ -93,7 +93,7 @@ export const FeatsData = [
     {
         id:10,
         name:"Internship-1",
-     
+      tags:[],
         date:"26 May, 2021",
         imgSrc:intern1,
         link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
@@ -101,7 +101,7 @@ export const FeatsData = [
     {
         id:11,
         name:"Internship-2",
-        
+         tags:[],
         date:"26 May, 2021",
         imgSrc:intern2,
         link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
