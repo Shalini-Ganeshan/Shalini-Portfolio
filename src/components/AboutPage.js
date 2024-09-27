@@ -28,7 +28,7 @@ const Myself = styled.div`
   position: absolute;
   top: 2%;
   right: 0%;
-  width: 45vw; /* Increased width */
+  width: 45vw; 
   animation: ${float} 4s ease infinite;
   img {
     width: 100%;
@@ -62,8 +62,8 @@ const Main = styled.div`
 
 
   @media (max-width: 480px) {
-    width: 50vw; /* Adjust width for small screens */
-    font-size: calc(0.5rem + 0.6vw); /* Reduce font size for small screens */
+    width: 50vw; 
+    font-size: calc(0.5rem + 0.6vw);
       height:60vh;
          left: 23%; 
          top:6rem;
