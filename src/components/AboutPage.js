@@ -59,8 +59,7 @@ const Main = styled.div`
     width: 60vw; /* Adjust width for medium screens */
     height: 60vh; /* Allow height to adjust based on content */
     margin: 1rem 0; 
-    
-     top:2rem;/* Add margin for spacing */
+     top:5rem;
   }
 
   @media (max-width: 480px) {
