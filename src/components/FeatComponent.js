@@ -61,6 +61,7 @@ const Title = styled.h3`
 
   @media (max-width: 768px) {
     font-size: 0.9rem; 
+    padding-top:0.3rem;
     
   }
 `;
