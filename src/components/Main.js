@@ -29,7 +29,7 @@ const Contact = styled.a`
   color: ${props => props.theme.text};
   position: absolute;
   top: 2rem;
-  right: calc(1rem + 2vw);
+  right: calc(13rem + 2vw);
   text-decoration: none;
   z-index: 1;
   @media (max-width: 1024px) {
@@ -194,7 +194,7 @@ const Main = () => {
 
   return (
     <MainContainer
-      initial={{ opacity: [0, 1]}
+      initial={{ opacity: [0, 1], transition: { duration: 5 } }}
       animate={{ opacity: isExiting ? 0 : 1 }}
       exit={{
         x: exitDirection === 'right' ? [0, 2000] :
