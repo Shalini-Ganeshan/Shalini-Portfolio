@@ -13,15 +13,15 @@ const FlipCard = styled(motion.div)`
   margin-right: 12rem;
 
   @media (max-width: 768px) {
-    width: 14rem; // Adjust for medium screens
-    height: 40vh; // Adjust height
-    margin-right: 12rem; // Adjust margin
+    width: 14rem;
+    height: 40vh; 
+    margin-right: 12rem;
   }
 
   @media (max-width: 480px) {
-    width: 11rem; // Adjust for mobile screens
-    height: 37vh; // Adjust height
-    margin-right: 10rem; // Remove margin
+    width: 11rem; 
+    height: 37vh;
+    margin-right: 10rem; 
   }
 `;
 
@@ -32,7 +32,7 @@ const FlipCardFront = styled.div`
   backface-visibility: hidden;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
-  padding: 1rem 1.5rem; // Reduced padding
+  padding: 1rem 1.5rem; 
   border-radius: 0 50px 0 50px;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ const FlipCardBack = styled.div`
   backface-visibility: hidden;
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
-  padding: 1rem 1.5rem; // Reduced padding
+  padding: 1rem 1.5rem; 
   border-radius: 0 50px 0 50px;
   display: flex;
   flex-direction: column;
@@ -59,21 +59,21 @@ const FlipCardBack = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: calc(1em + 0.3vw); // Reduced size
+  font-size: calc(1em + 0.3vw);
   text-align: center;
-  margin-bottom: 2rem; // Reduced margin
+  margin-bottom: 2rem; 
 
   @media (max-width: 768px) {
-    font-size: calc(0.9em + 0.3vw); // Further adjust for medium screens
+    font-size: calc(0.9em + 0.3vw); 
   }
 
   @media (max-width: 480px) {
-    font-size: calc(0.8em + 0.3vw); // Further adjust for mobile screens
+    font-size: calc(0.8em + 0.3vw);
   }
 `;
 
 const Description = styled.h2`
-  font-size: calc(0.7em + 0.2vw); // Reduced size
+  font-size: calc(0.7em + 0.2vw);
   font-family: 'Karla', sans-serif;
   font-weight: 500;
   text-align: center;
@@ -94,8 +94,8 @@ const Tags = styled.span`
 `;
 
 const Tag = styled.span`
-  margin-right: 0.5rem; // Reduced margin
-  font-size: calc(0.7em + 0.2vw); // Reduced size
+  margin-right: 0.5rem; 
+  font-size: calc(0.7em + 0.2vw); 
 `;
 
 const Footer = styled.footer`
@@ -108,16 +108,16 @@ const Link = styled.a`
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   text-decoration: none;
-  padding: 0.4rem calc(1.5rem + 1vw); // Reduced padding
+  padding: 0.4rem calc(1.5rem + 1vw); 
   border-radius: 0 0 0 50px;
-  font-size: calc(0.9em + 0.3vw); // Adjusted size
+  font-size: calc(0.9em + 0.3vw); 
 
   @media (max-width: 768px) {
-    font-size: calc(0.8em + 0.3vw); // Further adjust for medium screens
+    font-size: calc(0.8em + 0.3vw); 
   }
 
   @media (max-width: 480px) {
-    font-size: calc(0.7em + 0.2vw); // Further adjust for mobile screens
+    font-size: calc(0.7em + 0.2vw); 
   }
 `;
 
@@ -153,8 +153,6 @@ const Card = (props) => {
   const { id, name, description, tags, demo, github, image } = props.data;
 
   const [isFlipped, setIsFlipped] = useState(false);
-
-  // New handler for toggling the flip state
   const toggleFlip = () => {
     setIsFlipped((prev) => !prev);
   };
@@ -166,7 +164,7 @@ const Card = (props) => {
         variants={Item}
         onMouseEnter={() => setIsFlipped(true)}
         onMouseLeave={() => setIsFlipped(false)}
-        onTouchStart={toggleFlip} // Toggle flip on touch
+        onTouchStart={toggleFlip} 
       >
         <FlipCardFront>
           <Title>{name}</Title>
@@ -179,7 +177,7 @@ const Card = (props) => {
         variants={Item}
         onMouseEnter={() => setIsFlipped(true)}
         onMouseLeave={() => setIsFlipped(false)}
-        onTouchStart={toggleFlip} // Toggle flip on touch
+        onTouchStart={toggleFlip} 
       >
         <FlipCardBack>
           <WorkImage src={image} alt={name} loading="lazy" />
