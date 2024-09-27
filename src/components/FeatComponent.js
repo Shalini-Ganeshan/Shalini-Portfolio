@@ -29,8 +29,8 @@ const Box = styled(motion.a)`
   }
 
   @media (max-width: 768px) {
-    width: calc(12rem + 20vw);  /* Smaller width for mobile */
-    height: 18rem;  /* Smaller height for mobile */
+    width: calc(10rem + 20vw);  /* Smaller width for mobile */
+    height: 12rem;  /* Smaller height for mobile */
     padding: 0.5rem;  /* Less padding for mobile */
   }
 `;
