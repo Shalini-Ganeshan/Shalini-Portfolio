@@ -29,6 +29,17 @@ const Box = styled(motion.a)`
   }
 `;
 
+const Image = styled.img`
+  width: 100%;
+  height: 60%; /* Adjust as needed */
+  object-fit: cover; /* Ensure the image covers the area */
+  border: 1px solid transparent;
+
+  ${Box}:hover & {
+    border: 1px solid ${(props) => props.theme.body}; /* Border color on hover */
+  }
+`;
+
 const Title = styled.h3`
   color: inherit;
   padding: 0.5rem 0;
@@ -40,12 +51,15 @@ const Title = styled.h3`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem; /* Further reduce font size on mobile */
+    font-size: 0.8rem; /* Further reduce font size on mobile */
   }
 `;
 
 const HashTags = styled.div`
   padding: 0.5rem 0;
+    @media (max-width: 768px) {
+    font-size: 0.5rem; /* Further reduce font size on mobile */
+  }
 `;
 
 const Tag = styled.span`
@@ -54,6 +68,9 @@ const Tag = styled.span`
 
 const Date = styled.span`
   padding: 0.5rem 0;
+     @media (max-width: 768px) {
+    font-size: 0.3rem; /* Further reduce font size on mobile */
+  }
 `;
 
 const Container = styled(motion.div)``;
@@ -82,6 +99,7 @@ const FeatComponent = (props) => {
     >
       <Container variants={Item}>
         <Box target="_blank" href={`${link}`}>
+          {/* Lazy loaded image */}
           <Image src={imgSrc} alt={name} loading="lazy" />
           <Title>{name}</Title>
           <HashTags>
