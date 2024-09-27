@@ -25,24 +25,24 @@ const Box = styled(motion.a)`
 
   @media (max-width: 1024px) {
     width: calc(14rem + 20vw);
-    height: 22rem;  /* Adjust height for medium screens */
+    height: 22rem; 
   }
 
   @media (max-width: 768px) {
-    width: calc(10rem + 20vw);  /* Smaller width for mobile */
-    height: 15rem;  /* Smaller height for mobile */
-    padding: 0.5rem;  /* Less padding for mobile */
+    width: calc(10rem + 20vw); 
+    height: 15rem; 
+    padding: 0.5rem;  
   }
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 70%;
-  object-fit: contain; /* Ensures the entire image is visible */
+  object-fit: contain;
   border: 1px solid transparent;
 
   ${Box}:hover & {
-    border: 1px solid ${(props) => props.theme.body}; /* Border color on hover */
+    border: 1px solid ${(props) => props.theme.body};
   }
 `;
 
