@@ -66,7 +66,7 @@ const Main = styled.div`
     font-size: calc(0.5rem + 0.6vw); /* Reduce font size for small screens */
       height:60vh;
          left: 23%; 
-         top:5rem;
+         top:6rem;
          padding:1rem;
     
   }
