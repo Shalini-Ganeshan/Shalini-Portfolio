@@ -34,6 +34,10 @@ const Myself = styled.div`
     width: 100%;
     height: auto;
   }
+    @media (max-width: 768px) {
+    top: 1; 
+    right: 1; 
+  }
 `;
 
 const Main = styled.div`
