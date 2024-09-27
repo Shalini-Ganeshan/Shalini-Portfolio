@@ -60,14 +60,16 @@ const Title = styled.h3`
   }
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;  /* Smaller font size for mobile */
+    font-size: 0.9rem; 
+    padding-bottom:0.3rem/* Smaller font size for mobile */
   }
 `;
 
 const HashTags = styled.div`
   padding: 0.5rem 0;
    @media (max-width: 768px) {
-    font-size: 0.8rem;  /* Smaller font size for mobile */
+    font-size: 0.8rem; 
+     padding: 0.3rem 0;/* Smaller font size for mobile */
   }
 `;
 
@@ -78,7 +80,8 @@ const Tag = styled.span`
 const Date = styled.span`
   padding: 0.5rem 0;
    @media (max-width: 768px) {
-    font-size: 0.7rem;  /* Smaller font size for mobile */
+    font-size: 0.7rem;
+     padding: 0.3rem 0;/* Smaller font size for mobile */
   }
 `;
 
