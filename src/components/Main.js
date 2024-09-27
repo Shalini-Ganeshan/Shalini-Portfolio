@@ -83,7 +83,7 @@ const WORK = styled(NavLink)`
 
  
   @media (max-width: 600px) {
-    left: calc(0.4rem + 2vw); 
+    
     font-size:0.7rem;
   }
 ;`
