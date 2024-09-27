@@ -34,7 +34,7 @@ const Myself = styled.div`
     width: 100%;
     height: auto;
   }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
     top: 0; 
     right: 0; 
   }
