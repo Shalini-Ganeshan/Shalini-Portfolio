@@ -180,7 +180,7 @@ const Card = (props) => {
         onTouchStart={toggleFlip} 
       >
         <FlipCardBack>
-          <WorkImage src={image} alt={name} loading="lazy" />
+          <WorkImage src={image} alt={name} loading="eager" />
           <Line />
           <Tags>
             {tags.map((t, id) => (
