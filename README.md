@@ -1,2 +1,2 @@
 # Shalini-Portfolio
-My portfolio project using React Framer Motion .
+My portfolio project using React Framer Motion.
