@@ -114,7 +114,7 @@ const FeatComponent = (props) => {
       <Container variants={Item}>
         <Box target="_blank" href={`${link}`}>
           {/* Lazy loaded image */}
-          <Image src={imgSrc} alt={name} loading="lazy" />
+          <Image src={imgSrc} alt={name} loading="eager" />
           <Title>{name}</Title>
           <HashTags>
             {tags.map((t, id) => (
