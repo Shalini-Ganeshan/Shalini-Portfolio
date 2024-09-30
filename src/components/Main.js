@@ -26,7 +26,7 @@ const Container = styled.div`
 ;`
 
 const Contact = styled.a`
-  color: ${props => props.theme.text};
+   color: ${props => props.theme.text};
   position: absolute;
   top: 2rem;
   right: calc(13rem + 2vw);
@@ -35,13 +35,19 @@ const Contact = styled.a`
   @media (max-width: 1024px) {
     left: calc(9rem + 3vw);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    left: calc(8.5rem + 4vw); 
+    color:${props => props.click ? props.theme.body : props.theme.text};
+    font-size:1rem;
+  }
+  @media (max-width: 500px) {
     left: calc(4.5rem + 4vw); 
+    color:${props => props.click ? props.theme.body : props.theme.text};
     font-size:0.7rem;
   }
-;`
+  ;`
 const Resume = styled.a`
-color: ${props => props.theme.text};
+ color: ${props => props.click ? props.theme.body : props.theme.text};
 position: absolute;
 top: 2rem;
 left: calc(16rem + 3vw);
@@ -50,23 +56,35 @@ z-index:1;
 @media (max-width: 1024px) {
     left: calc(27rem + 3vw);
   }
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
+  font-size:1rem;
+ 
+  left: calc(32rem + 3vw);
+}
+    @media (max-width: 500px) {
   font-size:0.7rem;
+
   left: calc(14rem + 3vw);
 }`
 
 
 const BLOG = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color:${props => props.theme.text};
   position: absolute;
   top: 50%;
   right: calc(1rem + 2vw);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
+    right: calc(0.4rem + 2vw); 
+    font-size:1rem;
+    color: ${props => props.click ? props.theme.body : props.theme.text};
+  }
+  @media (max-width: 500px) {
     right: calc(0.4rem + 2vw); 
     font-size:0.7rem;
+    color: ${props => props.click ? props.theme.body : props.theme.text};
   }
 ;`
 
@@ -79,13 +97,16 @@ const WORK = styled(NavLink)`
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
- 
 
+  @media (max-width: 800px) {
+    font-size:1rem;
  
-  @media (max-width: 600px) {
-    
-    font-size:0.7rem;
   }
+  @media (max-width: 500px) {
+    font-size:0.7rem;
+
+  }
+ 
 ;`
 
 const BottomBar = styled.div`
@@ -102,14 +123,21 @@ const BottomBar = styled.div`
 ;`
 
 const ABOUT = styled(NavLink)`
-  color: ${props => props.click ? props.theme.body : props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
-  @media (max-width: 600px) {
-  font-size:0.7rem;
-}
-;
-`
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
+    color: ${(props) => props.theme.text}; /* Always use theme.text on small screens */
+  }
+  @media (max-width: 500px) {
+    font-size: 0.7rem;
+    color: ${(props) => props.theme.text}; /* Always use theme.text on small screens */
+  }
+`;
+
+
 const SKILLS = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
@@ -162,7 +190,16 @@ const Center = styled.button`
     @media (max-width: 768px) { 
       width: ${props => props.click ? '60px' : '120px'};
       height: ${props => props.click ? '60px' : '120px'};
+     
     }
+    @media (max-width: 508px) { 
+      width: ${props => props.click ? '60px' : '120px'};
+      height: ${props => props.click ? '60px' : '120px'};
+     left: ${props => props.click ? '90%' : '50%'};
+    }
+
+
+     
   }
 ;`
 
@@ -176,13 +213,22 @@ const DarkDiv = styled.div`
   height: ${props => props.click ? '100%' : '0%'};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
-;`
+
+  @media (max-width: 900px) {
+    right: 0; /* Ensure the black part starts at the full width */
+    width: 100%; /* Full width of the screen */
+    height: ${props => props.click ? '50%' : '0%'}; /* Take 50% height when clicked */
+    transition: width 0.5s ease, height 1s ease 0.5s; /* Ensure smooth transition */
+  }
+`;
+
 
 const Main = () => {
-   const [click, setClick] = useState(false);
+  const [click, setClick] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [exitDirection, setExitDirection] = useState('');
- const handleClick = () => setClick(!click);
+  
+  const handleClick = () => setClick(!click);
   const handleExit = (direction) => {
     setIsExiting(true);
     setExitDirection(direction);
@@ -211,12 +257,12 @@ const Main = () => {
         <LogoComponent theme={click ? 'dark' : 'light'} />
         <SocialIcons theme={click ? 'dark' : 'light'} />
 
-       <Center click={click}>
-                <YinYang  onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
-                <span>click here</span>
-            </Center>
+        <Center click={click}>
+          <YinYang onClick={() => handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
+          <span>click here</span>
+        </Center>
 
-        <Contact target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
+        <Contact target="_blank" href="mailto:shaliniganeshan2004@gmail.com" click={click}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -226,7 +272,7 @@ const Main = () => {
             Say hi..
           </motion.h2>
         </Contact>
-        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com">
+        <Resume target="_blank" href="mailto:shaliniganeshan2004@gmail.com" click={click}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -236,7 +282,7 @@ const Main = () => {
             Resume
           </motion.h2>
         </Resume>
-        <BLOG to="/feats" onClick={handleLeft}>
+        <BLOG to="/feats" onClick={handleLeft} click={click}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -246,18 +292,18 @@ const Main = () => {
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/work" onClick={handleRight}>
+        <WORK to="/myWork" click={click} onClick={handleRight}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Projects
+            Work
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" onClick={handleUp}>
+          <ABOUT to="/about" click={click} onClick={handleRight}>
             <motion.h2
               initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
@@ -279,6 +325,7 @@ const Main = () => {
           </SKILLS>
         </BottomBar>
       </Container>
+
       {click ? <Intro click={click} /> : null}
     </MainContainer>
   );
