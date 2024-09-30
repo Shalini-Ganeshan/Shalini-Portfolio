@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { Github } from '../components/AllSvgs';
-import '../components/css/Card.css';
+
 
 const FlipCard = styled(motion.div)`
   position: relative;
