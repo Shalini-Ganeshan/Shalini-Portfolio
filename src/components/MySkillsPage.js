@@ -250,7 +250,7 @@ const MySkillsPage = () => {
             transition={{ duration: 0.2, delay: 2.5 }}
           >
             <strong>Skills</strong>
-            <p>SpringBoot, MongoDB, Node.js, MySQL, GraphQL.</p>
+            <p>Java, SpringBoot, MongoDB, Node.js, MySQL, GraphQL.</p>
           </Description>
           <Description
             variants={descriptionVariants}
