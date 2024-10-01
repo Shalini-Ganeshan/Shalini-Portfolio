@@ -194,8 +194,8 @@ const Center = styled.button`
     }
     @media (max-width: 508px) { 
       width: ${props => props.click ? '60px' : '120px'};
-      height: ${props => props.click ? '60px' : '120px'};
-     left: ${props => props.click ? '90%' : '50%'};
+      height: ${props => props.click ? '45px' : '100px'};
+
     }
 
 
