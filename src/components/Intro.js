@@ -37,6 +37,7 @@ const Box = styled(motion.div)`
   
   @media (max-width: 568px) {
     height: 65vh;
+     left: 43%;
   }
   }
 `;
@@ -83,7 +84,7 @@ const SubBox = styled.div`
     }
       @media (max-width: 568px) {
     width: 110%;
-    height: 40%;
+      height: 50%;
     
     &:nth-child(1) {
       background-color: ${(props) => props.theme.text};
