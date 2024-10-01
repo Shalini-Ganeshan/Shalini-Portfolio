@@ -83,7 +83,7 @@ const SubBox = styled.div`
       width: 93%;
     }
       @media (max-width: 568px) {
-    width: 110%;
+    width: 130%;
       height: 50%;
     
     &:nth-child(1) {
