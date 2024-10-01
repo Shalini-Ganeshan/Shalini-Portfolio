@@ -97,7 +97,7 @@ const Description = styled(motion.div)`
     margin-left: 2rem;
   }
   @media (max-width: 480px) {
-  font-size:calc(0.6em + 1vw);
+  font-size:calc(0.5em + 1vw);
     
   }
 `;
