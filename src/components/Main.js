@@ -292,14 +292,14 @@ const Main = () => {
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/myWork" click={click} onClick={handleRight}>
+        <WORK to="/projects" click={click} onClick={handleRight}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Work
+            Projects
           </motion.h2>
         </WORK>
         <BottomBar>
