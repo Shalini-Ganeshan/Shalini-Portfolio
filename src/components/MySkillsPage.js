@@ -30,8 +30,8 @@ const Main = styled(motion.div)`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body}; 
   padding: 2rem;
-  width: 30vw; 
-  height: 60vh;
+  width: 25vw; 
+  height: 65vh;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
