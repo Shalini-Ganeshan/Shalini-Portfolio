@@ -140,6 +140,12 @@ const Text = styled.div`
     color: ${(props) => props.theme.body};
     text-align: center;
   }
+  @media (max-width: 568px) {
+    color: ${(props) => props.theme.body};
+    font-size: calc(1em + 1.2vw);
+    text-align: center;
+    padding: 1rem;
+  }
 `;
 
 const Intro = () => {
