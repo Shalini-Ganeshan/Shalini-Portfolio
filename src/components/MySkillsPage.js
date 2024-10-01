@@ -48,7 +48,7 @@ const Main = styled(motion.div)`
   }
 
   @media (max-width: 480px) {
-    width: 65vw; 
+    width: 53vw; 
     height: auto;
     top:5rem;
   }
