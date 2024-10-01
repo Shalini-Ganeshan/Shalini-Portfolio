@@ -138,6 +138,7 @@ const Text = styled.div`
     color: ${(props) => props.theme.body};
     font-size: calc(1em + 1.2vw);
     text-align: center;
+    gap:0.2rem;
     padding: 1rem;
   }
 `;
