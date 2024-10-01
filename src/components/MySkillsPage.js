@@ -51,6 +51,7 @@ const Main = styled(motion.div)`
     width: 53vw; 
     height: auto;
     top:5rem;
+    font-size:0.8rem;
   }
 
   background: rgba(0, 0, 0, 0.0);
