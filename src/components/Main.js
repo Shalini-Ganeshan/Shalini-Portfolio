@@ -292,7 +292,7 @@ const Main = () => {
             Feats
           </motion.h2>
         </BLOG>
-        <WORK to="/projects" click={click} onClick={handleRight}>
+        <WORK to="/work" click={click} onClick={handleRight}>
           <motion.h2
             initial={{ y: -200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
             animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
