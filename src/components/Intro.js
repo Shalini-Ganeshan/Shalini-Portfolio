@@ -9,7 +9,7 @@ const Box = styled(motion.div)`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 65vw;
-  height: 55vh;
+  height: 50vh;
   display: flex;
   background: linear-gradient(
     to right,
