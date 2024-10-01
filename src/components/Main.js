@@ -85,6 +85,7 @@ const BLOG = styled(NavLink)`
     right: calc(0.4rem + 2vw); 
     font-size:0.7rem;
     color: ${props => props.click ? props.theme.body : props.theme.text};
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black; 
   }
 ;`
 
