@@ -216,10 +216,10 @@ const DarkDiv = styled.div`
   transition: height 0.5s ease, width 1s ease 0.5s;
 
   @media (max-width: 900px) {
-    right: 0; /* Ensure the black part starts at the full width */
-    width: 100%; /* Full width of the screen */
-    height: ${props => props.click ? '50%' : '0%'}; /* Take 50% height when clicked */
-    transition: width 0.5s ease, height 1s ease 0.5s; /* Ensure smooth transition */
+    right: 0;
+    width: 100%; 
+    height: ${props => props.click ? '50%' : '0%'};
+    transition: width 0.5s ease, height 1s ease 0.5s; 
   }
 `;
 
@@ -231,10 +231,10 @@ const Main = () => {
    const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const updateMedia = () => {
-      setIsMobile(window.innerWidth < 768); // Check if the width is less than 768px
+      setIsMobile(window.innerWidth < 800);
     };
     window.addEventListener('resize', updateMedia);
-    updateMedia(); // Call it once to set the initial value
+    updateMedia(); 
 
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
