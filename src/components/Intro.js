@@ -27,24 +27,17 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 1;
 
-  // Media query for medium and small screens (vertical split)
   @media (max-width: 768px) {
     flex-direction: column;
     width: 51vw;
     height: 72vh;
-    background: linear-gradient(
-      ${(props) => props.theme.text} 50%
-      ${(props) => props.theme.body} 50%,
-    ) right,
-    linear-gradient(
-      ${(props) => props.theme.text } 50%,
-      ${(props) => props.theme.body} 50%
-    ) left;
-    background-size: 2px 100%;
-    border-left:  none;
-    border-right: none;
-    // border-top: 2px solid ${(props) => props.theme.body};
-    // border-bottom: 2px solid ${(props) => props.theme.text };
+    background: none; /* Remove background gradient */
+    border: none; /* Remove all borders to avoid visual lines */
+  }
+  
+  @media (max-width: 568px) {
+    height: 65vh;
+  }
   }
 `;
 
