@@ -241,7 +241,7 @@ const MySkillsPage = () => {
             animate="visible"
             transition={{ duration: 0.2, delay: 2 }}
           >
-            I love the idea of working behind the scenes to make everything tick, it lets me dive into managing databases and building systems from the ground up.
+            I love the idea of working behind the scenes to make everything tick, and building systems from the ground up.
           </Description>
           <Description
             variants={descriptionVariants}
