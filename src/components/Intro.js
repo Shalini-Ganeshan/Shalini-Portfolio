@@ -47,19 +47,19 @@ background-size: 100% 2px;
 `;
 
 const SubBox = styled.div`
-  width: 50%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ width: 50%;
+position: relative;
+display: flex;
 
-  .pic {
+.pic{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
     width: 100%;
     height: auto;
-  }
-
-  
-  @media (max-width: 768px) {
+}
+ @media (max-width: 768px) {
     width: 100%;
     height: 50%;
     
