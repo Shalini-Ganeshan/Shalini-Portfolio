@@ -30,8 +30,8 @@ const Main = styled(motion.div)`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body}; 
   padding: 2rem;
-  width: 25vw; 
-  height: 65vh;
+  width: 30vw; 
+  height: 60vh;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
@@ -48,7 +48,7 @@ const Main = styled(motion.div)`
   }
 
   @media (max-width: 480px) {
-    width: 60vw; 
+    width: 65vw; 
     height: auto;
     top:5rem;
   }
