@@ -228,6 +228,16 @@ const Main = () => {
   const [click, setClick] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [exitDirection, setExitDirection] = useState('');
+   const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const updateMedia = () => {
+      setIsMobile(window.innerWidth < 768); // Check if the width is less than 768px
+    };
+    window.addEventListener('resize', updateMedia);
+    updateMedia(); // Call it once to set the initial value
+
+    return () => window.removeEventListener('resize', updateMedia);
+  }, []);
   
   const handleClick = () => setClick(!click);
   const handleExit = (direction) => {
@@ -256,7 +266,7 @@ const Main = () => {
       <Container>
         <PowerButton />
         <LogoComponent theme={click ? 'dark' : 'light'} />
-        <SocialIcons theme={click ? 'dark' : 'light'} />
+          <SocialIcons theme={isMobile ? 'light' : (click ? 'dark' : 'light')} />
 
         <Center click={click}>
           <YinYang onClick={() => handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
