@@ -88,6 +88,34 @@ const SubBox = styled.div`
       transform: translate(-50%, 0%);
       width: 93%;
     }
+      @media (max-width: 568px) {
+    width: 110%;
+    height: 40%;
+    
+    &:nth-child(1) {
+      background-color: ${(props) => props.theme.text};
+      align-items:center;
+      height:50%;
+      border-top: 2px solid ${(props) => props.theme.body};
+      border-right:2px solid ${(props) => props.theme.body };
+      border-left:2px solid ${(props) => props.theme.body };
+    }
+
+    &:nth-child(2) {
+      background-color: ${(props) => props.theme.body};
+      border-bottom: 2px solid ${(props) => props.theme.text};
+      border-right:2px solid ${(props) => props.theme.text };
+      border-left:2px solid ${(props) => props.theme.text };
+    }
+
+    .pic {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 140%; 
+      
+    }
   }
 `;
 
