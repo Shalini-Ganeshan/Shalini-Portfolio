@@ -31,8 +31,8 @@ const Box = styled(motion.div)`
     flex-direction: column;
     width: 51vw;
     height: 72vh;
-    background: none; /* Remove background gradient */
-    border: none; /* Remove all borders to avoid visual lines */
+    background: none; 
+    border: none; 
   }
   
   @media (max-width: 568px) {
@@ -54,7 +54,7 @@ const SubBox = styled.div`
     height: auto;
   }
 
-  // Media query to adjust layout for medium and small screens
+  
   @media (max-width: 768px) {
     width: 100%;
     height: 50%;
@@ -129,7 +129,7 @@ const Text = styled.div`
     font-weight: 300;
   }
 
-  // Media query for medium and small screens to style text part in the black area
+  
   @media (max-width: 768px) {
     color: ${(props) => props.theme.body};
     text-align: center;
