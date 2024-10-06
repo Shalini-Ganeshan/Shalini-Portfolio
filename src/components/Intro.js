@@ -47,7 +47,7 @@ background-size: 100% 2px;
 `;
 
 const SubBox = styled.div`
- width: 50%;
+width: 50%;
 position: relative;
 display: flex;
 
@@ -118,7 +118,7 @@ display: flex;
 `;
 
 const Text = styled.div`
-  font-size: calc(1em + 1.5vw);
+font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
 padding: 2rem;
 cursor: pointer;
@@ -133,8 +133,6 @@ justify-content: space-evenly;
     font-weight:300;
 
 }
-
-  
   @media (max-width: 768px) {
     color: ${(props) => props.theme.body};
     text-align: center;
