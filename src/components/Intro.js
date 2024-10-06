@@ -135,6 +135,7 @@ justify-content: space-evenly;
   @media (max-width: 768px) {
     color: ${(props) => props.theme.body};
     text-align: center;
+      margin-top: -1rem;
   }
   @media (max-width: 568px) {
     color: ${(props) => props.theme.body};
@@ -142,6 +143,7 @@ justify-content: space-evenly;
     text-align: center;
     gap:0.2rem;
     padding: 1rem;
+    margin-top: -1.5rem; 
   }
 `;
 const Intro = () => {
