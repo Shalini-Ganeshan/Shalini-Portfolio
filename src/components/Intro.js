@@ -75,7 +75,7 @@ display: flex;
     &:nth-child(2) {
       background-color: ${(props) => props.theme.body};
       border-bottom: 2px solid ${(props) => props.theme.text};
-      border-right:2px solid ${(props) => props.theme.text };
+      border-right:3px solid ${(props) => props.theme.text };
       border-left:2px solid ${(props) => props.theme.text };
     }
 
