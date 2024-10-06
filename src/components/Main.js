@@ -56,7 +56,7 @@ z-index:1;
 @media (max-width: 1024px) {
     left: calc(27rem + 3vw);
   }
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
   font-size:1rem;
  
   left: calc(32rem + 3vw);
@@ -131,11 +131,11 @@ const ABOUT = styled(NavLink)`
 
   @media (max-width: 800px) {
     font-size: 1rem;
-    color: ${(props) => props.theme.text}; /* Always use theme.text on small screens */
+    color: ${(props) => props.theme.text}; 
   }
   @media (max-width: 500px) {
     font-size: 0.7rem;
-    color: ${(props) => props.theme.text}; /* Always use theme.text on small screens */
+    color: ${(props) => props.theme.text}; 
   }
 `;
 
