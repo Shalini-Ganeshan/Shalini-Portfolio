@@ -76,7 +76,7 @@ const BLOG = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
     right: calc(0.4rem + 2vw); 
     font-size:1rem;
     color: ${props => props.click ? props.theme.body : props.theme.text};
