@@ -50,23 +50,22 @@ const Resume = styled.a`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 2rem;
-  left: calc(16rem + 3vw);  
+  left: calc(16rem + 3vw);
   text-decoration: none;
   z-index: 1;
 
   @media (max-width: 1024px) {
-    left: calc(20rem + 3vw);  
+    left: calc(27rem + 3vw);
   }
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;  
-    left: calc(15rem + 3vw);  
+    font-size: 1rem;
+    left: calc(32rem + 3vw);
   }
 
   @media (max-width: 500px) {
-    font-size: 0.8rem; 
-    left: calc(10rem + 3vw);
-    top: 1.5rem;  
+    font-size: 0.7rem;
+    left: calc(14rem + 3vw);
   }
 `;
 
