@@ -111,7 +111,7 @@ display: flex;
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 0%);
-      width: 130%; 
+      width: 128%; 
       
     }
   }
