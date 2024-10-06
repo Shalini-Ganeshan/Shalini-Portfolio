@@ -144,6 +144,7 @@ justify-content: space-evenly;
     padding: 1rem;
   }
 `;
+const Intro = () => {
 
 const [boxHeight, setBoxHeight] = useState('55vh');
   useEffect(() => {
