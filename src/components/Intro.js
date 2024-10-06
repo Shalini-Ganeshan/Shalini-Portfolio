@@ -122,7 +122,7 @@ font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
 padding: 2rem;
 cursor: pointer;
-
+ gap: 0.2rem;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
