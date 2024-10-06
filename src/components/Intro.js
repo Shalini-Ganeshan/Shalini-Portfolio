@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Me from '../assets/Images/profile-img.png';
@@ -145,11 +145,25 @@ justify-content: space-evenly;
   }
 `;
 
-const Intro = () => {
+const [boxHeight, setBoxHeight] = useState('55vh');
+  useEffect(() => {
+    const updateHeight = () => {
+      if (window.innerWidth <= 768) {
+        setBoxHeight('72vh');
+      } else {
+        setBoxHeight('55vh');
+      }
+    };
+
+    window.addEventListener('resize', updateHeight);
+    updateHeight();
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: '55vh' }}
+      animate={{ height: boxHeight }}
       transition={{ type: 'spring', duration: 2, delay: 1 }}
     >
       <SubBox>
