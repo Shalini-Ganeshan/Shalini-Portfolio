@@ -150,7 +150,7 @@ const Intro = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: '72vh' }}
+      animate={{ height: '55vh' }}
       transition={{ type: 'spring', duration: 2, delay: 1 }}
     >
       <SubBox>
