@@ -201,10 +201,7 @@ const Center = styled.button`
       height: ${props => props.click ? '45px' : '100px'};
 top: ${props => props.click ? '97%' : '50%'};
     }
-
-
-     
-  }
+    }
 ;`
 
 const DarkDiv = styled.div`
@@ -317,7 +314,7 @@ const Main = () => {
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" click={click} onClick={handleRight}>
+          <ABOUT to="/about" click={click} onClick={handleUp}>
             <motion.h2
               initial={{ y: 200, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
               animate={{ y: 0, transition: { type: 'spring', duration: 1.5, delay: 1 } }}
