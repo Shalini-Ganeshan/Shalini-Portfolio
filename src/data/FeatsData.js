@@ -13,6 +13,7 @@ import python from "../assets/Images/feats-images/python-course.png"
 import react from "../assets/Images/feats-images/react-training.png"
 import udemy from "../assets/Images/feats-images/udemy.png"
 import js from "../assets/Images/feats-images/js.png"
+import codersforum from "../assets/Images/feats-images/coders-forum.png"
 
 export const FeatsData = [
     {
@@ -122,8 +123,16 @@ export const FeatsData = [
         imgSrc:cloudaws,
         link:"https://www.credly.com/badges/9bb63ada-5e43-477d-a8ef-3cbf9ebe4d4e/linked_in_profile"
     },
-    {
+       {
         id:14,
+        name:"Member at Coders Forum, PEC",
+        tags:["codingcommunity","codingchallenges"],
+        date:"3 October, 2024",
+        imgSrc:codersforum,
+        link:"https://codersforum.netlify.app/"
+    },
+    {
+        id:15,
         name:"Programming in JavaScript",
         tags:[],
         date:"26 May, 2021",
@@ -131,7 +140,7 @@ export const FeatsData = [
         link:"https://www.coursera.org/account/accomplishments/verify/KRGM389WK583"
     },
     {
-        id:15,
+        id:16,
         name:"Programming in Python",
         tags:[],
         date:"26 May, 2021",
